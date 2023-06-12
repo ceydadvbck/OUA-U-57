@@ -41,7 +41,18 @@ TAKIM OUA-U-57
 
 ### HEDEF KİTLE
 
-- +16 yaş üzeri bulmaca, macera ve korku/gerilim oyunlarını sevenler 
+- 15-35 yaşa arasındaki;
+  * FPS Oyun Severler: Oyun, FPS oyunlarında sıkça karşılaşılan hızlı tempolu aksiyon, nişan alma mekaniği ve stratejik oynanışı seven oyunculara hitap etmektedir.
+
+  * Dungeon Crawler Tutkunları: Karmaşık ve zorlu zindan ortamlarını keşfetmeyi, bulmacaları çözmeyi, gizli hazineleri keşfetmeyi ve yoğun dövüş karşılaşmalarına girmeyi seven oyuncuları hedeflemektedir.
+
+  * PvE Oyuncuları: Oyundaki odak noktası, oyuncuların birlikte çalışarak zorlu düşmanları yenmek ve oyunun içeriğinde ilerlemek için arkadaşlarıyla veya çevrimiçi oyuncularla bir ekip oluşturmasını tercih eden oyunculardan oluşmaktadır.
+
+  * Fantazi ve Macera Hayranları: Oyunun mekanı, hikayesi ve görselleri, fantastik temalara, sürükleyici dünyalara ve epik maceralara ilgi duyan oyuncuları cezbedebilir.
+
+  * Sert Çekirdek Oyuncular: Zor oynanışı, karmaşık ilerleme sistemlerini ve zor mekanikleri ustalaşmayı seven oyuncular. 3D PvE FPS dungeon crawler'ın derinliğini ve karmaşıklığını takdir etme eğilimindedirler.
+
+  * Çevrimiçi Çok Oyunculu Topluluk: Oyunun işbirliğine dayalı yapısı, diğer insanlarla etkileşimde bulunmayı, takımlar oluşturmayı ve çevrimiçi topluluklara katılmayı seven oyuncuları çekecektir.
 
 ---
 
