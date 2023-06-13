@@ -12,6 +12,7 @@ TagManager:
   - Arrow
   - Ground
   - ArrowTarget
+  - IceArrow
   layers:
   - Default
   - TransparentFX
