@@ -72,7 +72,10 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
 ![Ekran_goruntusu_2023-06-![Ekran_goruntusu_2023-06-15_215142](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/c98de7e6-1572-4f2e-ad0f-8328c8e3911f)
 15_215236](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/ce7c1a3f-5244-4f87-8d6b-33a819d5727d)
 ![Ekran_goruntusu_2023-06-15_215202](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/f49689bd-62f7-4964-840c-b834bc3f0c16)
-![oyunekrangoruntusu](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/867e98b9-ed01-4021-80b9-3a83b192dc00)
+![oyunekrangoruntusu](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/867e98b9-ed01-4021-80b9-3a83b192dc<img width="1113" alt="Ekran Resmi 2023-06-19 01 02 30" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/847eacc7-90d5-4c7f-8357-a25a4fcf46ae">
+00)<img width="1113" alt="Ekran Resmi 2023-06-19 01 01 34" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/5a85b311-f9ab-41ab-aaaf-8b5488e169b6">
+<img width="1113" alt="Ekran Resmi 2023-06-19 00 58 14" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/15d288c5-856b-4271-b9cf-fc4bcb59ec02">
+
 
 - Ekip her pazartesi toplantı almıştır.
   * **Toplantı notları:** https://docs.google.com/document/d/1fO8fNA6DLUU7AfLdYoHaSmdL_9ZhJyvYezOOUVqIJgc/edit?usp=sharing
