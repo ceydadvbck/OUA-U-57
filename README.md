@@ -65,7 +65,8 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
 - **Sprint board update:** Sprint board screenshotları:
   <img width="1254" alt="Ekran Resmi 2023-06-18 22 47 16" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/d4cb8175-329d-4fd7-b1bd-fc7209b1c6d0">
 - **Daily scrum :** Daily scrum toplantıları Discord üzerinden mesajlaşma ile yürütülmüştür.
-[SPRINT 1 DC .docx](https://github.com/ceydadvbck/OUA-U-57/files/11782298/SPRINT.1.DC.docx)
+[SPRINT 1 DC .docx](https://github.com/ceydadvbck/OUA-U-57/files/11782474/SPRINT.1.DC.docx)
+
 - Ekip her pazartesi toplantı almıştır.
   * **Toplantı notları:** https://docs.google.com/document/d/1fO8fNA6DLUU7AfLdYoHaSmdL_9ZhJyvYezOOUVqIJgc/edit?usp=sharing
 - Oyun tasarımı için Miro üzerinden çalışılmıştır.
