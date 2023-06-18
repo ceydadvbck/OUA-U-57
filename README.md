@@ -33,7 +33,7 @@ TAKIM OUA-U-57
 3. Bulmaca ve macera öğeleri 
 4. Zaman kısıtlaması
 5. İlerleme ve başarı kaydetme
-6. Tek oyuncu modu
+6. Multiplayer oyuncu modu
 7. Görsel ve Ses Efektleri:
 8. İpuçları ve Gizli Nesneler
 
