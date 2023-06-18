@@ -66,6 +66,12 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
   <img width="1254" alt="Ekran Resmi 2023-06-18 22 47 16" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/d4cb8175-329d-4fd7-b1bd-fc7209b1c6d0">
 - **Daily scrum :** Daily scrum toplantıları Discord üzerinden mesajlaşma ile yürütülmüştür.
 [SPRINT 1 DC .docx](https://github.com/ceydadvbck/OUA-U-57/files/11782474/SPRINT.1.DC.docx)
+- **Ürün Durumu**
+![Ekran_goruntusu_2023-06-15_215253](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/4e037e55-2c2a-4af3-9746-b651460c0a93)
+![Ekran_goruntusu_2023-06-![Ekran_goruntusu_2023-06-15_215142](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/c98de7e6-1572-4f2e-ad0f-8328c8e3911f)
+15_215236](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/ce7c1a3f-5244-4f87-8d6b-33a819d5727d)
+![Ekran_goruntusu_2023-06-15_215202](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/f49689bd-62f7-4964-840c-b834bc3f0c16)
+![oyunekrangoruntusu](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/867e98b9-ed01-4021-80b9-3a83b192dc00)
 
 - Ekip her pazartesi toplantı almıştır.
   * **Toplantı notları:** https://docs.google.com/document/d/1fO8fNA6DLUU7AfLdYoHaSmdL_9ZhJyvYezOOUVqIJgc/edit?usp=sharing
