@@ -57,3 +57,18 @@ TAKIM OUA-U-57
 ---
 
 ### PRODUCT BACKLOG URL
+https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit?usp=sharing
+
+## SPRINT 1
+- **Daily scrum :** Daily scrum toplantıları Discord üzerinden mesajlaşma ile yürütülmüştür.
+[SPRINT 1 DC .docx](https://github.com/ceydadvbck/OUA-U-57/files/11782298/SPRINT.1.DC.docx)
+- Ekip her pazartesi toplantı almıştır.
+  * **Toplantı notları:** https://docs.google.com/document/d/1fO8fNA6DLUU7AfLdYoHaSmdL_9ZhJyvYezOOUVqIJgc/edit?usp=sharing
+- Oyun tasarımı için Miro üzerinden çalışılmıştır.
+  * **Miro:** https://miro.com/app/board/uXjVMCKJy3M=/?share_link_id=49540094155
+- **Sprint Review:** Map üzerinde tasarım, boyut ve ışıklandırma üzerine çalışma yapılmıştır. Oyun hikayesi ve akış tasarlanmıştır.
+- **Sprint Retrospective:**
+  * Toplantı saati pazartesi saat 10.00'dan 12.00'ye alınmıştır.
+  * Projede hızlanılması gerektiği paylaşıldı.
+
+
