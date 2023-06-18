@@ -61,10 +61,12 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
 
 ## SPRINT 1
 - **Sprint Notları**: User story Product Backlog sheeti içerisinde verilmiştir. 
-- **Tahmin Edilen Tamamlanacak Puan**:
-- **Tahmin mantığı**
+- **Tahmin Edilen Tamamlanacak Puan**: 125 puan
+- **Tahmin mantığı:** Toplamda proje boyunca tamamlanması gereken 500 puanlık backlog bulunmaktadır. Görevler için harcanan emek ve ayrılan süre göz önüne alınarak puanlama yapılmıştır. Total puan düşünüldüğünde ilk sprintte en az 100 puanlık görevin tamamlanması gerektiğine karar verilmiştir. 
+
 - **Sprint board update:** Sprint board screenshotları:
-  <img width="1254" alt="Ekran Resmi 2023-06-18 22 47 16" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/d4cb8175-329d-4fd7-b1bd-fc7209b1c6d0">
+ <img width="890" alt="Ekran Resmi 2023-06-19 02 11 51" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/a032fb09-df38-4643-89e1-993284390dca">
+
 - **Daily scrum :** Daily scrum toplantıları Discord üzerinden mesajlaşma ile yürütülmüştür.
 [SPRINT 1 DC .docx](https://github.com/ceydadvbck/OUA-U-57/files/11782474/SPRINT.1.DC.docx)
 - **Ürün Durumu**
