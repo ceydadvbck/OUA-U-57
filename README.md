@@ -60,6 +60,10 @@ TAKIM OUA-U-57
 https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit?usp=sharing
 
 ## SPRINT 1
+- **Tahmin Edilen Tamamlanacak Puan**:
+- **Tahmin mantığı**
+- **Sprint board update:** Sprint board screenshotları:
+  <img width="1254" alt="Ekran Resmi 2023-06-18 22 47 16" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/d4cb8175-329d-4fd7-b1bd-fc7209b1c6d0">
 - **Daily scrum :** Daily scrum toplantıları Discord üzerinden mesajlaşma ile yürütülmüştür.
 [SPRINT 1 DC .docx](https://github.com/ceydadvbck/OUA-U-57/files/11782298/SPRINT.1.DC.docx)
 - Ekip her pazartesi toplantı almıştır.
