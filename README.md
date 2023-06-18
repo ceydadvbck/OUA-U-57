@@ -60,6 +60,7 @@ TAKIM OUA-U-57
 https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit?usp=sharing
 
 ## SPRINT 1
+- **Sprint Notları**: User story Product Backlog sheeti içerisinde verilmiştir. 
 - **Tahmin Edilen Tamamlanacak Puan**:
 - **Tahmin mantığı**
 - **Sprint board update:** Sprint board screenshotları:
