@@ -64,7 +64,7 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
 ## SPRINT 1
 - **Sprint Notları**: User story Product Backlog sheeti içerisinde verilmiştir. 
 - **Tahmin Edilen Tamamlanacak Puan**: 125 puan
-- **Tahmin mantığı:** Toplamda proje boyunca tamamlanması gereken 500 puanlık backlog bulunmaktadır. Görevler için harcanan emek ve ayrılan süre göz önüne alınarak puanlama yapılmıştır. Total puan düşünüldüğünde ilk sprintte en az 100 puanlık görevin tamamlanması gerektiğine karar verilmiştir. 
+- **Tahmin mantığı:** Toplamda proje boyunca tamamlanması gereken 395 puanlık backlog bulunmaktadır. Görevler için harcanan emek ve ayrılan süre göz önüne alınarak puanlama yapılmıştır. Total puan düşünüldüğünde ilk sprintte en az 100 puanlık görevin tamamlanması gerektiğine karar verilmiştir. 
 
 - **Sprint board update:** Sprint board screenshotları:
  <img width="890" alt="Ekran Resmi 2023-06-19 02 11 51" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/a032fb09-df38-4643-89e1-993284390dca">
