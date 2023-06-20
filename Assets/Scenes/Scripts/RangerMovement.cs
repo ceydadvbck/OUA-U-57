@@ -37,7 +37,7 @@ public class RangerMovement : NetworkBehaviour
         animationState = GetComponent<AnimationStateController>();
         anim = GetComponent<Animator>();
 
-        OnApplicationFocus(true);
+        //OnApplicationFocus(true);
     }
 
     public void Update()
@@ -158,10 +158,10 @@ public class RangerMovement : NetworkBehaviour
     public void JumpForce() => velocity.y += jumpSpeed;
 
 
-    private void OnApplicationFocus(bool focus) //CursorSet
-    {
-        if (focus) Cursor.lockState = CursorLockMode.Locked;
+    //private void OnApplicationFocus(bool focus) //CursorSet
+    //{
+    //    if (focus) Cursor.lockState = CursorLockMode.Locked;
 
-        else Cursor.lockState = CursorLockMode.None;
-    }
+    //    else Cursor.lockState = CursorLockMode.None;
+    //}
 }
