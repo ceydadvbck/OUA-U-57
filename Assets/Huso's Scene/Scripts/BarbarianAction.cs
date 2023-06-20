@@ -171,7 +171,7 @@ public class BarbarianAction : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position + (transform.forward - new Vector3(0, 0, .3f)) + transform.up, punchRadius);
+        Gizmos.DrawWireSphere(transform.position + transform.forward  + transform.up, punchRadius);
     }
 
     void BarbarianBodyAimRegulation()  //Body facing the target
@@ -198,12 +198,12 @@ public class BarbarianAction : MonoBehaviour
            
         }
     }
+
     IEnumerator ClassicAttackControl()
     {
         yield return new WaitForSeconds(1f);
         anim.SetBool("AxeClassicAttack", false);
     }
-
     #endregion
 
     #region AXE THROW CONTROL

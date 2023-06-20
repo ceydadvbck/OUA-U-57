@@ -3738,9 +3738,9 @@ MonoBehaviour:
   rbAxe: {fileID: 8612220820951265787}
   axeCol: {fileID: 1669960835762934665}
   axeParent: {fileID: 7458216456343873352}
-  groundAttackCoolDown: 30
-  throwAttackCoolDown: 10
-  classicAttackCoolDown: 3
+  classicAttackCoolDown: 1
+  throwAttackCoolDown: 1
+  groundAttackCoolDown: 1
   punchRadius: 1.2
   throwPoint: {fileID: 2831475774638483948}
   throwPower: 100

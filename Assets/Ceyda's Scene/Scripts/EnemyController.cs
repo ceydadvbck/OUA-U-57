@@ -17,9 +17,4 @@ public class EnemyController : MonoBehaviour
     {
         
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.Draw(transform.position, lookRadius);
-    }
 }
