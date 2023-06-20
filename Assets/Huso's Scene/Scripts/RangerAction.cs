@@ -13,11 +13,16 @@ public class RangerAction : MonoBehaviour
     [SerializeField] GameObject iceArrow;
     [SerializeField] GameObject tripleArrow;
     [SerializeField] GameObject[] arrowInHand;
-
+    [SerializeField] GameObject shootArrowLine;
 
     [SerializeField] float arrowForce;
-    [SerializeField] float attackCoolDown;
-    float attackTime;
+    [SerializeField] float classicAttackCoolDown;
+    [SerializeField] float tripleAttackCoolDown;
+    [SerializeField] float iceAttackCoolDown;
+
+    float classicAttackTime = 0f;
+    float iceAttackTime = 0f;
+    float tripleAttackTime = 0f;
     [SerializeField] Transform[] arrowSpawnPoint;
     [SerializeField] bool rangerAiming = false;
 
@@ -40,8 +45,10 @@ public class RangerAction : MonoBehaviour
     private Vector3 targetOffset;
     private float transitionTimer;
     private bool classicArrowShoot;
+    private bool tripleArrowShoot;
 
 
+    LineRenderer lineren;
     public void Start()
     {
         aimLookAt = GameObject.FindGameObjectWithTag("AimLookAt");
@@ -50,13 +57,15 @@ public class RangerAction : MonoBehaviour
         mainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
         initialOffset = bodyAim.data.offset;
+
     }
 
 
     public void Update()
     {
-        BodyAimRegulation();
+        RangerBodyAimRegulation();
 
+     
         if (Input.GetMouseButtonDown(1))
         {
             RangerAim();
@@ -65,37 +74,64 @@ public class RangerAction : MonoBehaviour
         {
             animator.SetBool("ArrowAim", false);
             animator.SetBool("ArrowAimShoot", false);
-            animator.SetBool("ArrowTripleAimShoot", false);
 
             rangerAiming = false;
+
         }
 
         if (rangerAiming)
         {
-            StartCoroutine(IsTripleArrowAttack());
-
             if (Input.GetButtonDown("Fire1"))
             {
-                animator.SetBool("ArrowAimShoot", true);
-                classicArrowShoot = true;
+                if (Time.time > classicAttackTime)
+                {
+                    animator.SetBool("ArrowAimShoot", true);
+
+                    tripleArrowShoot = false;
+                    classicArrowShoot = true;
+                    classicAttackTime = 0f;
+                    classicAttackTime = Time.time + classicAttackCoolDown;
+                }
+
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (Time.time > iceAttackTime)
+                {
+                    animator.SetBool("ArrowAimShoot", true);
+                    tripleArrowShoot = false;
+                    classicArrowShoot = false;
+                    iceAttackTime = 0f;
+                    iceAttackTime = Time.time + iceAttackCoolDown;
+                }
+
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
-                animator.SetBool("ArrowAimShoot", true);
-                classicArrowShoot = false;
+                if (Time.time > tripleAttackTime)
+                {
+                    animator.SetBool("ArrowAimShoot", true);
+
+                    tripleArrowShoot = true;
+                    tripleAttackTime = 0f;
+                    tripleAttackTime = Time.time + tripleAttackCoolDown;
+                }
+
             }
         }
         else
         {
-            if (bodyAim.weight >0) bodyAim.weight -= 4f * Time.deltaTime;
+            if (bodyAim.weight > 0) bodyAim.weight -= 4f * Time.deltaTime;
 
             rightHand.weight = 0f;
             leftHand.weight = 0f;
-            TripleArrowIsActive(false);
+            shootArrowLine.SetActive(false);
+            arrowInHand[0].SetActive(false);
+
         }
     }
 
-    void BodyAimRegulation() //Body facing the target
+    void RangerBodyAimRegulation() //Body facing the target
     {
         handAim.data.sourceObjects.Add(new(aimLookAt.transform, 1f));
         lookAt.transform.position = Vector3.Lerp(lookAt.transform.position, aimLookAt.transform.position, 1f);
@@ -113,31 +149,33 @@ public class RangerAction : MonoBehaviour
 
     public void RangerAim()
     {
-        if (attackTime < Time.time)
-        {
-            attackTime = 0f;
-            attackTime = Time.time + attackCoolDown;
+        animator.SetBool("ArrowAim", true);
+        rangerAiming = true;
 
-            animator.SetBool("ArrowAim", true);
-            rangerAiming = true;
-
-            bodyAim.weight = 1f;
-        }
+        bodyAim.weight = 1f;
     }
 
-    public void RangerAttack(GameObject arrowPrefab)//ClassicAttack- AnimationEvent
+    public void RangerArrowAttack(GameObject arrowPrefab)//ClassicAttack- AnimationEvent
     {
+        if (!tripleArrowShoot)
+        {
+            if (!classicArrowShoot) arrowPrefab = iceArrow;
 
-        if (!classicArrowShoot) arrowPrefab = iceArrow;
+            else arrowPrefab = arrow;
 
-        else arrowPrefab = arrow;
+            animator.SetBool("ArrowAimShoot", false);
+            arrowInHand[0].SetActive(false);
 
-        animator.SetBool("ArrowAimShoot", false);
-        arrowInHand[0].SetActive(false);
+            GameObject arrowClone = GameObject.Instantiate(arrowPrefab, arrowSpawnPoint[0].transform.position, arrowSpawnPoint[0].transform.rotation) as GameObject;
+            Rigidbody arrowRb = arrowClone.GetComponentInChildren<Rigidbody>();
+            arrowRb.AddForce(arrowSpawnPoint[0].transform.forward * arrowForce, ForceMode.Impulse);
+        }
+        else
+        {
+            TripleArrowAttack();
+            animator.SetBool("ArrowAimShoot", false);
+        }
 
-        GameObject arrowClone = GameObject.Instantiate(arrowPrefab, arrowSpawnPoint[0].transform.position, arrowSpawnPoint[0].transform.rotation) as GameObject;
-        Rigidbody arrowRb = arrowClone.GetComponentInChildren<Rigidbody>();
-        arrowRb.AddForce(arrowSpawnPoint[0].transform.forward * arrowForce, ForceMode.Impulse);
 
     }
 
@@ -147,11 +185,11 @@ public class RangerAction : MonoBehaviour
     }
 
     #region TRÝPLLEATTACK
-    public void TripleArrowAttack() //AnimaitonEvent
+
+    public void TripleArrowAttack()
     {
-        TripleArrowIsActive(false);
-
-
+        arrowInHand[0].SetActive(false);
+      
         GameObject arrowClone = GameObject.Instantiate(tripleArrow, arrowSpawnPoint[0].transform.position, arrowSpawnPoint[0].transform.rotation) as GameObject;
         GameObject arrowClone1 = GameObject.Instantiate(tripleArrow, arrowSpawnPoint[1].transform.position, arrowSpawnPoint[1].transform.rotation) as GameObject;
         GameObject arrowClone2 = GameObject.Instantiate(tripleArrow, arrowSpawnPoint[2].transform.position, arrowSpawnPoint[2].transform.rotation) as GameObject;
@@ -161,37 +199,7 @@ public class RangerAction : MonoBehaviour
         arrowRb1.AddForce(arrowSpawnPoint[1].transform.forward * arrowForce, ForceMode.Impulse);
         Rigidbody arrowRb2 = arrowClone2.GetComponentInChildren<Rigidbody>();
         arrowRb2.AddForce(arrowSpawnPoint[2].transform.forward * arrowForce, ForceMode.Impulse);
-
     }
-
-
-    void TripleArrowIsActive(bool isTripleArrowActive) // TripleArrowInHand
-    {
-        for (int i = 0; i < arrowInHand.Length; i++)
-        {
-            arrowInHand[i].SetActive(isTripleArrowActive);
-        }
-    }
-
-
-    IEnumerator IsTripleArrowAttack() // Q Check
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            animator.SetBool("ArrowAim", true);
-            animator.SetBool("ArrowTripleAimShoot", true);
-            animator.SetBool("ArrowAimShoot", true);
-            TripleArrowIsActive(true);
-        }
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            animator.SetBool("ArrowAim", false);
-            animator.SetBool("ArrowAimShoot", false);
-            animator.SetBool("ArrowTripleAimShoot", false);
-
-            yield return new WaitForSeconds(0.5f);
-            rangerAiming = false;
-        }
-    }
+ 
     #endregion
 }

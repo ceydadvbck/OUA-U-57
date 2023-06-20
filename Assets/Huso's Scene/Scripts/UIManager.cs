@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static UIManager Instance;
+
+    [SerializeField] private BarbarianAction barbarian;
+    [SerializeField] private RangerAction ranger;
+    public Image classicCoolDownFill;
+    public Image groundCoolDownFill;
+    public Image throwCoolDownFill;
+
+    public void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
+
 }

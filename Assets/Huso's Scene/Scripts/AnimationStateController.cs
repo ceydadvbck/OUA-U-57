@@ -22,7 +22,7 @@ public class AnimationStateController : NetworkBehaviour
     [SerializeField] float maxWalkVelocity = 1f;
     [SerializeField] float maxRunVelocity = 2f;
 
-    RangerMovement characterControl;
+    CharacterMovement characterControl;
     Animator anim;
 
     int velocityZHash;
@@ -32,7 +32,7 @@ public class AnimationStateController : NetworkBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        characterControl = gameObject.GetComponent<RangerMovement>();
+        characterControl = gameObject.GetComponent<CharacterMovement>();
 
         velocityZHash = Animator.StringToHash("MoveZ");
         velocityXHash = Animator.StringToHash("MoveX");

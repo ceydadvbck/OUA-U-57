@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Barbarian
   m_EditorClassIdentifier: 
   characterName: Barbarian
-  characterPrefab: {fileID: 7750022904266430957, guid: d5a62f47f4e2e2c44a707b8eec6b126f, type: 3}
+  characterPrefab: {fileID: 7605311907999972157, guid: 1caa74559f0a5a64caa17409c06a45b6, type: 3}

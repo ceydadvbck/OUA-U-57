@@ -10,25 +10,23 @@ public class SkeletonBody : MonoBehaviour
 
     public void GetHit()
     {
-      /*  if (childLimbs.Length > 0)
-        {
-            foreach (SkeletonBody limb in childLimbs)
-            {
-                if (limb != null)
-                {
-                    limb.GetHit();
-                }
-            }
-        }*/
         if (limbPrefab != null)
         {
-            GameObject limbClone=  Instantiate(limbPrefab, transform.position, transform.rotation);
+            GameObject limbClone = Instantiate(limbPrefab, transform.position, transform.rotation);
             Destroy(limbClone, 5f);
         }
 
         transform.localScale = Vector3.zero;
 
         Destroy(gameObject);
-       
+
+    }
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.transform.CompareTag("GroundAttackDamageBox"))
+        {
+            GetHit();
+         
+        }
     }
 }
