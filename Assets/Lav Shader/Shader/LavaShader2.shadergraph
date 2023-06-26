@@ -97,9 +97,6 @@
             "m_Id": "64efe45603e242cf928c8c974fdbb986"
         },
         {
-            "m_Id": "5d8859f0048a437ea4800b28a00661b3"
-        },
-        {
             "m_Id": "777ef3c1ddb0429dbcc73818775ad51d"
         },
         {
@@ -1117,9 +1114,6 @@
             },
             {
                 "m_Id": "64efe45603e242cf928c8c974fdbb986"
-            },
-            {
-                "m_Id": "5d8859f0048a437ea4800b28a00661b3"
             }
         ]
     },
@@ -1138,7 +1132,7 @@
     },
     "m_ActiveTargets": [
         {
-            "m_Id": "1a1308efd4394cf8a4269ad595046a69"
+            "m_Id": "0d88d736a088435bb3675dd11d0be31f"
         }
     ]
 }
@@ -1510,6 +1504,26 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
+    "m_ObjectId": "0d88d736a088435bb3675dd11d0be31f",
+    "m_ActiveSubTarget": {
+        "m_Id": "fe310821ebc94547924b7e75ebb81485"
+    },
+    "m_AllowMaterialOverride": false,
+    "m_SurfaceType": 0,
+    "m_ZTestMode": 4,
+    "m_ZWriteControl": 0,
+    "m_AlphaMode": 0,
+    "m_RenderFace": 2,
+    "m_AlphaClip": false,
+    "m_CastShadows": true,
+    "m_ReceiveShadows": true,
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "0e11d4703ab1422f8d45648e3cf279b4",
@@ -1869,23 +1883,6 @@
         "y": 0.0
     },
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 2,
-    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInTarget",
-    "m_ObjectId": "1a1308efd4394cf8a4269ad595046a69",
-    "m_ActiveSubTarget": {
-        "m_Id": "78e0d624e3af414fbef0c741f86d5cfb"
-    },
-    "m_AllowMaterialOverride": false,
-    "m_SurfaceType": 0,
-    "m_ZWriteControl": 0,
-    "m_ZTestMode": 4,
-    "m_AlphaMode": 0,
-    "m_RenderFace": 2,
-    "m_AlphaClip": false,
-    "m_CustomEditorGUI": ""
 }
 
 {
@@ -3714,39 +3711,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "5d8859f0048a437ea4800b28a00661b3",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.Occlusion",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "f206582beb7c4e66ab3efff19834f525"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.Occlusion"
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "5ef6d9ddf2ba49388f674cc9ae3525e0",
     "m_Id": 1,
@@ -4391,14 +4355,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.BaseColor"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInLitSubTarget",
-    "m_ObjectId": "78e0d624e3af414fbef0c741f86d5cfb",
-    "m_WorkflowMode": 1,
-    "m_NormalDropOffSpace": 0
 }
 
 {
@@ -7394,21 +7350,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "f206582beb7c4e66ab3efff19834f525",
-    "m_Id": 0,
-    "m_DisplayName": "Ambient Occlusion",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Occlusion",
-    "m_StageCapability": 2,
-    "m_Value": 1.0,
-    "m_DefaultValue": 1.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "f279705c6cf44a17ab34b0e05d9b382e",
     "m_Id": 0,
     "m_DisplayName": "VoronoidAmmout",
@@ -7744,5 +7685,11 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
+    "m_ObjectId": "fe310821ebc94547924b7e75ebb81485"
 }
 
