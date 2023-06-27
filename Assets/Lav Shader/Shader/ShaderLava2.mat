@@ -84,7 +84,7 @@ Material:
     m_Colors:
     - _BottomReMap: {r: 0.34, g: 0.76, b: 0, a: 0}
     - _FresnelColor: {r: 0.2509804, g: 0, b: 0, a: 0}
-    - _LavaColor: {r: 4.005235, g: 0.66887426, b: 0.08010463, a: 1}
+    - _LavaColor: {r: 1.6576641, g: 0.13813868, b: 0, a: 1}
     - _LavaNormalSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _LavaReMap: {r: -0.12, g: 4.14, b: 0, a: 0}
     - _LavaScale: {r: 30, g: 2, b: 0, a: 0}
