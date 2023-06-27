@@ -78,7 +78,7 @@ Material:
     - _SimpleNoisePower: 0
     - _SimpleNoiseScale: 30
     - _Smootness: 0.5
-    - _VoronoidAmmout: -0.58
+    - _VoronoidAmmout: 1
     - _VoronoidAngleOffset: 0
     - _VoronoidScale: 0
     m_Colors:
