@@ -89,5 +89,35 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
 - **Sprint Retrospective:**
   * Toplantı saati pazartesi saat 10.00'dan 12.00'ye alınmıştır.
   * Projede hızlanılması gerektiği paylaşıldı.
+- **Product Backlog URL** : https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit#gid=479934176
+---
+ ## SPRINT 2
+- **Sprint Notları**: User Storylerde kabul kriterleri ilgili hücreye not olarak bırakılmıştır.
+- **Daily Scrum***: Daily Scrum toplantıları zamansal sebeplerden ötürü whatsapp ve discord üzerinden alınmıştır. [Sprint 2 .docx](https://github.com/ceydadvbck/OUA-U-57/files/11929548/Sprint.2.docx)
+- **Sprint board update:** Sprint board screenshotları:
+<img width="1323" alt="Ekran Resmi 2023-07-02 16 05 25" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/0f5e22a8-e76b-4977-86a1-cb8470421f60"> 
+<img width="1084" alt="Ekran Resmi 2023-07-02 16 06 52" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/ea3ea96b-07fa-4e81-bd75-1d1a8dde6ce6">
+- **Ürün Durumu** :
+
+![WhatsApp Image 2023-06-30 at 18 56 06](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/b79238ac-b677-4e75-acd2-9b7612cb2c63)
+
+![WhatsApp Image 2023-06-30 at 18 56 06 (1)](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/dd70d51a-73be-4dc7-9b10-52da840f7dde)
+
+![WhatsApp Image 2023-06-30 at 18 56 05](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/6932b88f-7634-4ff5-a972-82b953210523)
+
+![WhatsApp Image 2023-06-30 at 18 56 05 (2)](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/1e5ce79
+![WhatsApp Image 2023-06-30 at 18 56 05 (1)](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/66435fe5-1587-45d8-8ed9-7aaf6d6862d4)
 
 
+https://github.com/ceydadvbck/OUA-U-57/assets/109868640/79b793a6-a2b6-4ea0-aca3-d99a1debd840
+
+- Ekip her pazartesi saat 12.00'de toplantı almıştır.
+  * **Toplantı notları:** https://docs.google.com/document/d/1fO8fNA6DLUU7AfLdYoHaSmdL_9ZhJyvYezOOUVqIJgc/edit?usp=sharing
+- Oyun tasarımı için Miro üzerinden çalışılmıştır.
+  * **Miro:** https://miro.com/app/board/uXjVMCKJy3M=/?share_link_id=49540094155
+- **Sprint Review:** GitHub'daki problemler üzerine çalışılmıştır. Bir koridor eklenmiştir. Asset bulmada zorluk yaşandı. Bayram sebebiyle ekip projeye zaman ayırmakta zorlandı.
+- **Sprint Retrospective:**
+  * Toplantıların pazartesi, çarşamba ve cuma olacak şekilde tekrarlanmasına karar verilmiştir. 
+  * Projede hızlanılması gerektiği paylaşıldı.
+- **Product Backlog URL** : https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit#gid=479934176
+---
