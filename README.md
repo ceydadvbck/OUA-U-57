@@ -93,6 +93,9 @@ https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyF
 ---
  ## SPRINT 2
 - **Sprint Notları**: User Storylerde kabul kriterleri ilgili hücreye not olarak bırakılmıştır.
+- **Tahmin Edilen Tamamlanacak Puan**: 150 puan + önceki sprintten kalan 44 puan
+- **Tahmin mantığı:** Toplamda proje boyunca tamamlanması gereken 395 puanlık backlog bulunmaktadır. Görevler için harcanan emek ve ayrılan süre göz önüne alınarak puanlama yapılmıştır. Total puan düşünüldüğünde ilk sprintte en az 150 puanlık görevin tamamlanması gerektiğine karar verilmiştir. 
+
 - **Daily Scrum***: Daily Scrum toplantıları zamansal sebeplerden ötürü whatsapp ve discord üzerinden alınmıştır. [Sprint 2 .docx](https://github.com/ceydadvbck/OUA-U-57/files/11929548/Sprint.2.docx)
 - **Sprint board update:** Sprint board screenshotları:
 <img width="1323" alt="Ekran Resmi 2023-07-02 16 05 25" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/0f5e22a8-e76b-4977-86a1-cb8470421f60"> 
