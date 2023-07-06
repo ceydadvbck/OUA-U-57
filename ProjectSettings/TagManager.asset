@@ -11,7 +11,6 @@ TagManager:
   - PlayerAimCamera
   - Arrow
   - Ground
-  - ArrowTarget
   layers:
   - Default
   - TransparentFX
