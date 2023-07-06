@@ -280,6 +280,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2533950036723561331, guid: 41cd31b52e5074946b78e8d686cf3fec, type: 3}
     - target: {fileID: 3355081666812390164, guid: f50580169c519314c9f59c5ae474e2fd, type: 3}
+      propertyPath: iceDomainRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355081666812390164, guid: f50580169c519314c9f59c5ae474e2fd, type: 3}
       propertyPath: iceCrackParticle
       value: 
       objectReference: {fileID: 2533950036723561331, guid: 41cd31b52e5074946b78e8d686cf3fec, type: 3}

@@ -406,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 62741931
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &109339678 stripped
@@ -494,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barbarian: {fileID: -9078464161360134785, guid: 1caa74559f0a5a64caa17409c06a45b6, type: 3}
-  ranger: {fileID: 0}
+  ranger: {fileID: -5036202274150371960, guid: f50ea3a112de43f43a62d3148e869990, type: 3}
   classicCoolDownFill: {fileID: 146654014}
   groundCoolDownFill: {fileID: 1839041305}
   throwCoolDownFill: {fileID: 1255553515}
@@ -759,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3901914489
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1518,6 +1526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1867785725
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &176980450 stripped
@@ -1771,6 +1783,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3569728699
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2469,6 +2485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1035976550
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &276687494
@@ -2525,6 +2545,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1174308925
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -2774,6 +2798,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3733646752
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3779,6 +3807,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1879372101
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -4580,6 +4612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2441796000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1 &417120076
@@ -4871,6 +4907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 588826306
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &464265541
@@ -5119,6 +5159,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2600058436
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5802,6 +5846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3256275595
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &520606576 stripped
@@ -5878,6 +5926,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3363559349
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -6179,6 +6231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3089241224
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &575039533 stripped
@@ -6245,6 +6301,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1811971378
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -6405,7 +6465,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 150
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -6838,6 +6898,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1839227667
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7712,6 +7776,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2144083532
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8648,6 +8716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1261414518
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1 &705507993
@@ -8897,6 +8969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4103634868
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1 &736664543
@@ -8944,7 +9020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 7777
+  port: 7771
   DualMode: 1
   NoDelay: 1
   Interval: 10
@@ -8958,7 +9034,7 @@ MonoBehaviour:
   MaximizeSocketBuffers: 1
   ReliableMaxMessageSize: 297433
   UnreliableMaxMessageSize: 1195
-  debugLog: 0
+  debugLog: 1
   statisticsGUI: 0
   statisticsLog: 0
 --- !u!114 &736664546
@@ -9076,6 +9152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 447918859
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &758507438 stripped
@@ -9137,6 +9217,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2651214782
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -9386,6 +9470,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2691338026
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10177,6 +10265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3847553760
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &800754879 stripped
@@ -10430,6 +10522,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1775577651
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11304,6 +11400,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1749555707
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12338,6 +12438,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3378755344
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13492,6 +13596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 836583095
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &958564455 stripped
@@ -13765,6 +13873,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3405975736
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14635,6 +14747,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2296599488
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -15317,6 +15433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4276311863
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &1085704066 stripped
@@ -15379,6 +15499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2859403151
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &1123214962
@@ -15435,6 +15559,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 50327256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -15689,6 +15817,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 909434726
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16637,6 +16769,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2744549309
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -17440,7 +17576,6 @@ GameObject:
   - component: {fileID: 1237711582}
   - component: {fileID: 1237711581}
   - component: {fileID: 1237711580}
-  - component: {fileID: 1237711579}
   - component: {fileID: 1237711583}
   m_Layer: 0
   m_Name: MainCamera
@@ -17449,18 +17584,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1237711579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237711578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f970cef2a481e46af2dcdbecc7f359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1237711580
 AudioListener:
   m_ObjectHideFlags: 0
@@ -17776,6 +17899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2792736325
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &1327067975 stripped
@@ -18029,6 +18156,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3671031108
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18707,6 +18838,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 745345790
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &1369861539
@@ -18955,6 +19090,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4221205651
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19835,6 +19974,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2668615641
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -20709,6 +20852,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 448664250
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -21531,6 +21678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3205677915
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &1572117454
@@ -21587,6 +21738,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2642799836
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -21836,6 +21991,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3848508991
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22514,6 +22673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 509445594
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &1600432199
@@ -22570,6 +22733,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 309530165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -22819,6 +22986,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4153139327
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23497,6 +23668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 3662094440
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &1620880447
@@ -23553,6 +23728,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 646946045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -23802,6 +23981,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2911783827
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24671,6 +24854,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1325786195
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25612,6 +25799,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1875297957
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -26480,6 +26671,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2852059408
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27560,6 +27755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 117649599
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &1785680022 stripped
@@ -27621,6 +27820,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2218123129
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -27948,6 +28151,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4095677319
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28975,6 +29182,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1718912176
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -29843,6 +30054,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2830648305
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30877,6 +31092,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4117440267
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -31554,6 +31773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2889166682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &2013451596
@@ -31802,6 +32025,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 238528289
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32594,6 +32821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2820539933
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &2086314846
@@ -32842,6 +33073,10 @@ PrefabInstance:
     - target: {fileID: 2658554544567843944, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 4059060212
       objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33712,6 +33947,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.21969663
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 21510829
+      objectReference: {fileID: 0}
     - target: {fileID: 2733008379822266248, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9790626
@@ -34388,6 +34627,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1296788340
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}

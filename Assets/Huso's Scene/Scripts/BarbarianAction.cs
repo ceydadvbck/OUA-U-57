@@ -1,12 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
+using Mirror;
 
-public class BarbarianAction : MonoBehaviour
+public class BarbarianAction : NetworkBehaviour
 {
     Animator anim;
+    private UIManager uiManager;
+
     [Header("AIM")]
     [SerializeField] private MultiAimConstraint bodyAim;
     [SerializeField] private GameObject lookAt;
@@ -15,7 +17,7 @@ public class BarbarianAction : MonoBehaviour
     [Space(10)]
 
     [Header("AXE")]
-    public Rigidbody rbAxe;
+     public  Rigidbody rbAxe;
     [SerializeField] BoxCollider axeCol;
     [SerializeField] GameObject axeParent;
 
@@ -26,9 +28,7 @@ public class BarbarianAction : MonoBehaviour
     public float throwAttackCoolDown = 5f;
     public float groundAttackCoolDown = 20f;
 
-
     [Space(10)]
-
 
     [Header("CLASSÝC ATTACK")]
     [SerializeField] private float punchRadius;
@@ -53,13 +53,17 @@ public class BarbarianAction : MonoBehaviour
     [SerializeField] private GameObject groundAttackParticle;
 
 
-     bool axeThrow = false;
-     bool axeReturn = false;
-     bool axeInTheAir = false;
-     bool axeGroundAttack = false;
-     bool axeHolded = true;
-     bool classicAttack = false;
-    private UIManager uiManager;
+    bool axeThrow = false;
+    [SyncVar(hook = nameof(OnAxeReturnStateChange))]
+    bool axeReturn = false;
+    bool axeInTheAir = false;
+    bool axeGroundAttack = false;
+    bool axeHolded = true;
+    bool classicAttack = false;
+
+    public bool isCharacterActive;
+    private bool isAimLookAtUpdated = false;
+   
 
     public void Awake()
     {
@@ -68,24 +72,28 @@ public class BarbarianAction : MonoBehaviour
 
     void Start()
     {
+    
         anim = GetComponent<Animator>();
         aimLookAt = GameObject.FindGameObjectWithTag("AimLookAt");
         anim.SetBool("AxeHolded", true);
-    }
 
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
 
     void Update()
     {
+        if (!hasAuthority) return;
         BarbarianBodyAimRegulation();
 
-        if (Input.GetMouseButtonDown(0) && !axeThrow && !axeInTheAir)
+
+        if (Input.GetMouseButtonDown(0) && !axeThrow && !axeInTheAir && !axeGroundAttack && !classicAttack)
         {
             if (Time.time > classicAttackTime)
             {
                 anim.SetBool("AxeClassicAttack", true);
                 StartCooldown(uiManager.classicCoolDownFill, classicAttackCoolDown);
                 StartCoroutine(ClassicAttackControl());
-
                 classicAttack = true;
 
                 classicAttackTime = 0f;
@@ -94,13 +102,14 @@ public class BarbarianAction : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Q) && !axeGroundAttack && !axeInTheAir)
+        if (Input.GetKeyDown(KeyCode.Q) && !axeGroundAttack && !axeInTheAir && !classicAttack && !axeThrow)
         {
             if (Time.time > groundAttackTime)
             {
                 anim.SetBool("AxeGroundAttack", true);
                 StartCooldown(uiManager.groundCoolDownFill, groundAttackCoolDown);
                 bodyAim.weight = 0f;
+                axeGroundAttack = true;
 
                 groundAttackTime = 0f;
                 groundAttackTime = Time.time + groundAttackCoolDown;
@@ -171,21 +180,37 @@ public class BarbarianAction : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position + transform.forward  + transform.up, punchRadius);
-    }
+        Gizmos.DrawWireSphere(transform.position + transform.forward + transform.up, punchRadius);
+    } //Classic Attack Gizmos
 
-    void BarbarianBodyAimRegulation()  //Body facing the target
+
+    //[Command]
+    void BarbarianBodyAimRegulation()
+    {
+        RPCBarbarianBodyAimRegulation();
+    }
+    
+    //[ClientRpc]
+    void RPCBarbarianBodyAimRegulation()  //Body facing the target
     {
         bodyAim.data.sourceObjects.Add(new(aimLookAt.transform, 1f));
         lookAt.transform.position = Vector3.Lerp(lookAt.transform.position, aimLookAt.transform.position, 1f);
     }
+   
+
+  
 
     #region CLASSÝC ATTACK
-
+    [Command]
     void BarbarianClassicAttack() //AnimationEvent
     {
+        RPCBarbarianClassicAttack();
+    }
+    [ClientRpc]
+    void RPCBarbarianClassicAttack()
+    {
         Collider[] hits = Physics.OverlapSphere(transform.position + transform.forward + transform.up, punchRadius);
-      
+
         foreach (Collider hit in hits)
         {
             if (hit.gameObject == this.gameObject) continue;
@@ -195,19 +220,29 @@ public class BarbarianAction : MonoBehaviour
                 SkeletonBody skeleton = hit.gameObject.GetComponent<SkeletonBody>();
                 skeleton.GetHit();
             }
-           
+
         }
     }
 
     IEnumerator ClassicAttackControl()
     {
+
         yield return new WaitForSeconds(1f);
         anim.SetBool("AxeClassicAttack", false);
+        classicAttack = false;
     }
     #endregion
 
     #region AXE THROW CONTROL
+
+
+    [Command]
     public void AxeThrow() //AnimationEvent
+    {
+        RPCAxeThrow();
+    }
+    [ClientRpc]
+    void RPCAxeThrow()
     {
         axeHolded = false;
         rbAxe.useGravity = true;
@@ -219,21 +254,34 @@ public class BarbarianAction : MonoBehaviour
         rbAxe.AddTorque(rbAxe.transform.TransformDirection(Vector3.back) * 1000, ForceMode.Acceleration);
     }
 
-    public void ReturnAxe()//AnimationEvent
+
+    [Command]
+    public void ReturnAxe() //AnimationEvent
+    {
+        axeReturn = true;
+    }
+
+    void OnAxeReturnStateChange(bool oldValue, bool newValue)
     {
         rbAxe.gameObject.GetComponent<AxeController>().activated = true;
         time = 0f;
         oldPos = rbAxe.position;
         rbAxe.velocity = Vector3.zero;
-        axeReturn = true;
+        axeReturn = newValue;
         rbAxe.useGravity = false;
         rbAxe.isKinematic = false;
-
     }
 
+
+    [Command]
     public void ResetAxe()
     {
+        RPCResetAxe();
 
+    }
+    [ClientRpc]
+    void RPCResetAxe()
+    {
         anim.SetBool("AxeCaught", true);
         anim.SetBool("AxeHolding", false);
         anim.SetBool("AxeHolded", true);
@@ -252,7 +300,6 @@ public class BarbarianAction : MonoBehaviour
         axeHolded = true;
     }
 
-
     Vector3 QuadraticBezierCurvePoint(float t, Vector3 p0, Vector3 p1, Vector3 p2)
     {
         float v = 1 - t;
@@ -266,7 +313,13 @@ public class BarbarianAction : MonoBehaviour
 
     #region GROUND ATTACK
 
+    [Command]
     void BarbarianGroundAttack() //AnimationEvent
+    {
+        RPCBarbarianGroundAttack();
+    }
+    [ClientRpc]
+    void RPCBarbarianGroundAttack()
     {
         GameObject cloneGroundAttackParticle = Instantiate(groundAttackParticle, groundAttackPoint.position, gameObject.transform.rotation);
         Destroy(cloneGroundAttackParticle, 2f);
@@ -274,11 +327,13 @@ public class BarbarianAction : MonoBehaviour
         StartCoroutine(GroundAttackTimeControl(0.75f));
     }
 
+
+
     IEnumerator GroundAttackTimeControl(float time)
     {
-        axeGroundAttack = true;
 
         yield return new WaitForSeconds(time);
+
         anim.SetBool("AxeGroundAttack", false);
         axeGroundAttack = false;
         bodyAim.weight = 1f;
@@ -307,5 +362,8 @@ public class BarbarianAction : MonoBehaviour
 
     #endregion
 
+
+
+  
 }
 

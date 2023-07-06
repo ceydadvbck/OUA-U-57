@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227513900260321036}
   m_LocalRotation: {x: -0.7290801, y: 0.07077007, z: 0.11375308, w: 0.6711886}
-  m_LocalPosition: {x: -0.1577237, y: 0.1787655, z: 0.1232547}
+  m_LocalPosition: {x: -0.153, y: 0.18, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: -5036202274150371960}
   - component: {fileID: 2984557620249713840}
   - component: {fileID: 5044959788554465790}
+  - component: {fileID: 8716423074023771959}
   m_Layer: 0
   m_Name: Ranger
   m_TagString: Ranger
@@ -319,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845960542818758189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.083, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -400,9 +401,9 @@ MonoBehaviour:
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   onlySyncOnChange: 0
   bufferResetMultiplier: 5
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
+  positionSensitivity: 0.1
+  rotationSensitivity: 0.1
+  scaleSensitivity: 0.1
 --- !u!114 &7513204363500589687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   clientAuthority: 1
@@ -452,16 +453,17 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  isGrounded: 0
+  isGrounded: 1
   groundCheck: {fileID: 1176633692}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  groundRad: 0.1
+  groundRad: 0.03
   speed: 1.5
+  runSpeed: 5
   rotSpeed: 1
-  jumpSpeed: 5
-  jumpRate: 0.5
+  jumpSpeed: 6
+  jumpRate: 1.5
   gravityScale: -9.8
   mainCamera: {fileID: 0}
 --- !u!114 &7513204363500589690
@@ -497,30 +499,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f72a0d136330b1479cdc6b46e04c3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   arrow: {fileID: 3961022824548148312, guid: 39960fbe57efa14458313db4e22e0fb1, type: 3}
   iceArrow: {fileID: 3961022824548148312, guid: 94281c88260edbd498f0476da1982d00, type: 3}
   tripleArrow: {fileID: 3961022824548148312, guid: db827771cbff82942970fa66d09ca8b8, type: 3}
+  arrowForce: 25
+  shootArrowLine: {fileID: 7016204030522260384}
   arrowInHand:
   - {fileID: 7939133540571638017}
   - {fileID: 6619667998020199247}
   - {fileID: 6682053178031886542}
-  shootArrowLine: {fileID: 7016204030522260384}
-  arrowForce: 25
   classicAttackCoolDown: 1
-  tripleAttackCoolDown: 5
-  iceAttackCoolDown: 5
+  tripleAttackCoolDown: 1
+  iceAttackCoolDown: 1
   arrowSpawnPoint:
   - {fileID: 8861136565309096078}
   - {fileID: 2408493334525249493}
   - {fileID: 6119921069432675886}
-  rangerAiming: 0
   bodyAim: {fileID: 4308265189901423246}
   handAim: {fileID: 4313467579202301086}
   handRot: {fileID: 7966776930935953740}
   rightHand: {fileID: 2137935139198192435}
   leftHand: {fileID: 4990229499355502770}
   lookAt: {fileID: 3828349909796080119}
+  rangerAiming: 0
   transitionDuration: 0
+  classicArrowShoot: 0
+  tripleArrowShoot: 0
 --- !u!114 &2984557620249713840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,6 +629,19 @@ MonoBehaviour:
   - {fileID: 8400950250981632993}
   - {fileID: 2067761531276616294}
   - {fileID: 305426268502569012}
+--- !u!114 &8716423074023771959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845960542818758189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80c8654f7bbe2e4ea101a905b495c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 300
 --- !u!1 &1205946119728767991
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259391888721020388}
   m_LocalRotation: {x: -0.814798, y: 0.025331797, z: 0.074305184, w: 0.57440525}
-  m_LocalPosition: {x: -0.1872973, y: 0.12827966, z: 0.0067536477}
+  m_LocalPosition: {x: -0.19, y: 0.12, z: -0.016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

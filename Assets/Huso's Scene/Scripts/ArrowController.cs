@@ -1,18 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    [SerializeField] Vector3 arrowTarget;
+    [Header ("ARROW MOVEMENT")]
     public float speed;
     Rigidbody rb;
 
+    [Space(10)]
+
+    [Header ("ICE ARROW")]
+    [Range(0,10f)] public float iceDomainRadius;
     [SerializeField] private Material iceMaterial;
     [SerializeField] private GameObject iceImpactParticle;
     [SerializeField] private GameObject iceCrackParticle;
     bool ice›mpactActive;
-    private SkeletonBody skeletonBody;
+
 
 
     public void Start()
@@ -32,7 +35,7 @@ public class ArrowController : MonoBehaviour
             rb.isKinematic = true;
         }
 
-        if (gameObject.CompareTag("IceArrow") && iceImpactParticle != null && !ice›mpactActive)
+        if (other.gameObject.CompareTag("Ground") && gameObject.CompareTag("IceArrow") && iceImpactParticle != null && !ice›mpactActive)
         {
             StartCoroutine(ArrowEffectControl());
             GameObject clone›ceImpact = Instantiate(iceImpactParticle, gameObject.transform);
@@ -45,22 +48,33 @@ public class ArrowController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Skeleton") && gameObject.CompareTag("IceArrow") && iceMaterial != null)
         {
-            Destroy(transform.parent.gameObject, 1f);
+            Destroy(transform.parent.gameObject);
             rb.isKinematic = true;
 
-            skeletonBody = other.transform.gameObject.GetComponentInParent<SkeletonBody>();
 
-            for (int i = 0; i < skeletonBody.transform.childCount; i++)
+            Collider[] hits = Physics.OverlapSphere(other.GetContact(0).point, 2f);
+            foreach (Collider hit in hits)
             {
-                Transform child = skeletonBody.transform.GetChild(i);
-                SkinnedMeshRenderer skinnedMeshRenderer = child.GetComponentInChildren<SkinnedMeshRenderer>();
-                if (skinnedMeshRenderer != null)
+                if (hit.gameObject == this.gameObject) continue;
+
+                if (hit.gameObject.CompareTag("Skeleton"))
                 {
-                    skinnedMeshRenderer.material = iceMaterial;
+                    SkeletonBody skeletonBody = hit.gameObject.GetComponent<SkeletonBody>();
+                    if (skeletonBody != null)
+                    {
+                        for (int i = 0; i < skeletonBody.transform.childCount; i++)
+                        {
+                            Transform child = skeletonBody.transform.GetChild(i);
+                            SkinnedMeshRenderer skinnedMeshRenderer = child.GetComponentInChildren<SkinnedMeshRenderer>();
+                            if (skinnedMeshRenderer != null)
+                            {
+                                skinnedMeshRenderer.material = iceMaterial;
+                            }
+                        }
+                    }
                 }
             }
         }
-
 
         else if (other.gameObject.CompareTag("Ground")) rb.isKinematic = true;
 

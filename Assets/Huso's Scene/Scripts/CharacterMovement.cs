@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using Cinemachine;
@@ -10,7 +8,7 @@ public class CharacterMovement : NetworkBehaviour
 
     AnimationStateController animationState;
     CharacterController characterController;
-    Animator anim;
+    NetworkAnimator anim;
 
     [Header("Ground")]
     public bool isGrounded;
@@ -20,55 +18,48 @@ public class CharacterMovement : NetworkBehaviour
 
     [Header("Move")]
     public float speed;
+    public float runSpeed;
+    float speedValue;
     private Vector3 velocity;
-    public float rotSpeed;
+    [SerializeField] float rotSpeed;
     bool isMove;
     public float jumpSpeed;
     float jumpTime;
-    public float jumpRate;
-    public float gravityScale;
+    [SerializeField] float jumpRate;
+    [SerializeField] float gravityScale;
     bool jumpPressed = false;
 
-
     [SerializeField] private Transform mainCamera;
+
     public void Start()
     {
+        if (!isOwned) return;
         characterController = GetComponent<CharacterController>();
         animationState = GetComponent<AnimationStateController>();
-        anim = GetComponent<Animator>();
+        anim = GetComponent<NetworkAnimator>();
 
-        OnApplicationFocus(true);
+       
     }
+    public override void OnStartAuthority()
+    {
+        base.OnStartAuthority();
+        GameObject.FindGameObjectWithTag("PlayerFollowCamera").GetComponent<CinemachineFreeLook>().Follow = transform.GetChild(0).transform;
+        GameObject.FindGameObjectWithTag("PlayerFollowCamera").GetComponent<CinemachineFreeLook>().LookAt = transform.GetChild(0).transform;
+        Debug.Log("xd");
+    }
+
 
     public void Update()
     {
-      
+        if (!isOwned) return;
+
         Move();
-
-        //Height and Falling control with Ray 
-        RaycastHit hit;
-        Ray ray = new Ray(transform.position, -Vector3.up);
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            float distance = hit.distance;
-
-            //Play falling animation if height is greater than 6f  
-            if (distance > 6f) anim.SetBool("Falling", true);
-
-        }
-
     }
 
-    public override void OnStartServer()
-    {
-        GameObject.FindGameObjectWithTag("PlayerFollowCamera").GetComponent<CinemachineFreeLook>().Follow = transform.GetChild(0).transform;
-        GameObject.FindGameObjectWithTag("PlayerFollowCamera").GetComponent<CinemachineFreeLook>().LookAt = transform.GetChild(0).transform;
-
-    }
 
     private void Move()
     {
+
         #region Move
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -78,7 +69,7 @@ public class CharacterMovement : NetworkBehaviour
         movement = transform.TransformDirection(movement);
         movement *= speed * Time.deltaTime;
 
-        if (isMove) characterController.Move(movement);
+        transform.position += movement;
 
         #endregion
 
@@ -86,15 +77,14 @@ public class CharacterMovement : NetworkBehaviour
 
         Vector3 camForward = Camera.main.transform.forward;
         camForward.y = 0f;
-        if (!Input.GetKey(KeyCode.F))
-        {
-            transform.forward = Vector3.Lerp(transform.forward, camForward, 5f * Time.deltaTime);
-        }
+
+        transform.rotation = Quaternion.LookRotation(camForward);
+
         #endregion
 
         #region SpeedControl
 
-        speed = animationState.runSpeed ? 5 : 1.5f;
+        speedValue = animationState.runSpeed ? runSpeed : speed;
 
         #endregion
 
@@ -113,27 +103,8 @@ public class CharacterMovement : NetworkBehaviour
 
         #endregion
 
-        /* #region Crouch
-
-         if (CrouchControl())
-         {
-             anim.SetBool("Crouch", true);
-         }
-         else
-         {
-             anim.SetBool("Crouch", false);
-         }
-
-
-         #endregion*/
     }
 
-    /* public bool CrouchControl()
-     {
-         if (Input.GetKey(KeyCode.LeftControl)) return true;
-         if (Input.GetKeyUp(KeyCode.LeftControl)) return false;
-         else return false;
-     }*/
 
     private void JumpControl()
     {
@@ -158,10 +129,5 @@ public class CharacterMovement : NetworkBehaviour
     public void JumpForce() => velocity.y += jumpSpeed;
 
 
-    private void OnApplicationFocus(bool focus) //CursorSet
-    {
-        if (focus) Cursor.lockState = CursorLockMode.Locked;
-
-        else Cursor.lockState = CursorLockMode.None;
-    }
+  
 }

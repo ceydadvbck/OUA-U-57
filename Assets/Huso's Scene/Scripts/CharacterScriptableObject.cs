@@ -9,5 +9,4 @@ public class CharacterScriptableObject : ScriptableObject
 
     public string CharacterName => characterName;
     public GameObject CharacterPrefab => characterPrefab;
-
 }

@@ -3430,6 +3430,7 @@ GameObject:
   - component: {fileID: 7987889680302590029}
   - component: {fileID: 1916711379325363287}
   - component: {fileID: -9078464161360134785}
+  - component: {fileID: 5258441513611831466}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Barbarian
@@ -3510,7 +3511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   clientAuthority: 1
@@ -3562,9 +3563,9 @@ MonoBehaviour:
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   onlySyncOnChange: 0
   bufferResetMultiplier: 5
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
+  positionSensitivity: 0.1
+  rotationSensitivity: 0.1
+  scaleSensitivity: 0.1
 --- !u!114 &2764239093508404445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3585,11 +3586,12 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  groundRad: 0.1
+  groundRad: 0.03
   speed: 1.5
+  runSpeed: 0
   rotSpeed: 1
-  jumpSpeed: 5
-  jumpRate: 0.5
+  jumpSpeed: 6
+  jumpRate: 1.5
   gravityScale: -9.8
   mainCamera: {fileID: 0}
 --- !u!114 &9046193858414802152
@@ -3733,6 +3735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff4b1297b9dbe9468c44d635db74319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   bodyAim: {fileID: 9059723747404927812}
   lookAt: {fileID: 7885326000540130348}
   rbAxe: {fileID: 8612220820951265787}
@@ -3749,6 +3754,20 @@ MonoBehaviour:
   oldPos: {x: 0, y: 0, z: 0}
   groundAttackPoint: {fileID: 3843594963098497248}
   groundAttackParticle: {fileID: 6783856256558374194, guid: c0fd690b0af5bf5409ea98d6b8a4a813, type: 3}
+  isCharacterActive: 0
+--- !u!114 &5258441513611831466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7605311907999972157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80c8654f7bbe2e4ea101a905b495c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
 --- !u!1 &7660367535426181222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4423,25 +4442,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5676270843457627502}
     m_Modifications:
+    - target: {fileID: 777141833116261231, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
+      propertyPath: barbarianAnim
+      value: 
+      objectReference: {fileID: 3756145689943309309}
     - target: {fileID: 3212033932424478639, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-      propertyPath: m_UseGravity
+      propertyPath: m_Interpolate
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212033932424478639, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-      propertyPath: m_Constraints
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212033932424478639, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4487,28 +4498,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarbarianAxe
       objectReference: {fileID: 0}
+    - target: {fileID: 6944536003887227924, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
+      propertyPath: _assetId
+      value: 4194246741
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
---- !u!1 &515022909090271347 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6643394912650731047, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-  m_PrefabInstance: {fileID: 6563907271438143060}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &777141833116261231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515022909090271347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed56d4cdadec2ff4eb19b5b6d680a3e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barbarianAnim: {fileID: 3756145689943309309}
-  activated: 0
-  rSpeed: 150
 --- !u!4 &515022909090303059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}

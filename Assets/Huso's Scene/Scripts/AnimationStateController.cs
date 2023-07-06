@@ -43,6 +43,7 @@ public class AnimationStateController : NetworkBehaviour
 
     void Update()
     {
+        if (!hasAuthority) return;
 
          Movement();
     }

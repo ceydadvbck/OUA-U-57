@@ -122,6 +122,7 @@ Library: lib_burst_generated
 --compilation-defines=MIRROR_73_OR_NEWER
 --compilation-defines=MIRROR_78_OR_NEWER
 --compilation-defines=MIRROR_79_OR_NEWER
+--compilation-defines=UNITY_POST_PROCESSING_STACK_V2
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -129,11 +130,14 @@ Library: lib_burst_generated
 --compilation-defines=PACKAGE_UITOOLKIT
 --compilation-defines=CSHARP_7_OR_LATER
 --compilation-defines=CSHARP_7_3_OR_NEWER
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
 --compilation-defines=MODULE_AI_EXISTS
 --compilation-defines=MODULE_ANIMATION_EXISTS
 --compilation-defines=MODULE_PHYSICS_EXISTS
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
+--compilation-defines=CINEMACHINE_POST_PROCESSING_V2
 --compilation-defines=CINEMACHINE_TIMELINE
 --compilation-defines=CINEMACHINE_PHYSICS_2D
 --compilation-defines=CINEMACHINE_PHYSICS
@@ -143,39 +147,43 @@ Library: lib_burst_generated
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --linker-options=PdbAltPath="PatternExercise_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
---output=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Telemetry.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\SimpleWebTransport.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Examples.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Animation.Rigging.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Burst.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Components.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Cinemachine.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Transports.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Telepathy.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Registration.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\kcp2k.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
---assembly-folder=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\
+--output=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.Runtime.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Telemetry.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\SimpleWebTransport.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Examples.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Postprocessing.Runtime.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Animation.Rigging.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Burst.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Components.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Cinemachine.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Transports.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Telepathy.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Registration.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\kcp2k.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+--assembly-folder=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.Intrinsics.X86, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::DoGetCSRTrampoline()--89425a97f3f500fa810ad03f0c382542
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.RigSyncSceneToStreamJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.RigSyncSceneToStreamJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--ace2aae5a27941878a3e799c113aa8ca
@@ -316,6 +324,7 @@ Library: lib_burst_generated
 --compilation-defines=MIRROR_73_OR_NEWER
 --compilation-defines=MIRROR_78_OR_NEWER
 --compilation-defines=MIRROR_79_OR_NEWER
+--compilation-defines=UNITY_POST_PROCESSING_STACK_V2
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -323,11 +332,14 @@ Library: lib_burst_generated
 --compilation-defines=PACKAGE_UITOOLKIT
 --compilation-defines=CSHARP_7_OR_LATER
 --compilation-defines=CSHARP_7_3_OR_NEWER
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
 --compilation-defines=MODULE_AI_EXISTS
 --compilation-defines=MODULE_ANIMATION_EXISTS
 --compilation-defines=MODULE_PHYSICS_EXISTS
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
+--compilation-defines=CINEMACHINE_POST_PROCESSING_V2
 --compilation-defines=CINEMACHINE_TIMELINE
 --compilation-defines=CINEMACHINE_PHYSICS_2D
 --compilation-defines=CINEMACHINE_PHYSICS
@@ -337,39 +349,43 @@ Library: lib_burst_generated
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --linker-options=PdbAltPath="PatternExercise_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
---output=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Telemetry.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\SimpleWebTransport.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Examples.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Animation.Rigging.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Burst.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Components.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Cinemachine.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Transports.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Telepathy.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Registration.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\kcp2k.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
---root-assembly=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
---assembly-folder=C:\Users\husoy\PatternExercise\Temp\StagingArea\Data\Managed\
+--output=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.Runtime.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Telemetry.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\SimpleWebTransport.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Examples.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Postprocessing.Runtime.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Animation.Rigging.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Burst.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Components.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Cinemachine.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Transports.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Telepathy.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Registration.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\kcp2k.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
+--root-assembly=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+--assembly-folder=C:\Users\husoy\OneDrive\Masaüstü\SneakerGame\OUA-U-57\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.RigSyncSceneToStreamJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.RigSyncSceneToStreamJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--ace2aae5a27941878a3e799c113aa8ca
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.TwistChainConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.TwistChainConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--c87ed99efbf2a664bdfbc37c0b35d206
@@ -381,10 +397,10 @@ Library: lib_burst_generated
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.BlendConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.BlendConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--cfea4edd4d3923f14bbd080d30d59a25
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.ChainIKConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.ChainIKConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--f8836ca6e4d6f549d52557a9dcf72086
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.DampedTransformJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.DampedTransformJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--9489cdcace9811f1ed31e365fa9d41a2
---method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiAimConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiAimConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--94d5c1f8e5738c317ab470f74caee94d
---method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiParentConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiParentConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--eeb7723452876b9aacdf4fedc32ae7e2
---method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiPositionConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiPositionConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--b5cdf7e8f004ac62ab5cf712781c2d56
 --method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.TwoBoneIKConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.TwoBoneIKConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--0c96fb01b070c5126b22b8685cc3e444
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
 --method=Unity.Burst.Intrinsics.X86, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::DoSetCSRTrampoline(System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--da352d92cabf024fc9986011d52a4537
+--method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiAimConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiAimConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--94d5c1f8e5738c317ab470f74caee94d
+--method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiParentConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiParentConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--eeb7723452876b9aacdf4fedc32ae7e2
+--method=UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiPositionConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiPositionConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--b5cdf7e8f004ac62ab5cf712781c2d56
 
