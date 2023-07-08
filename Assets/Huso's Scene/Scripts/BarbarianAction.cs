@@ -52,17 +52,16 @@ public class BarbarianAction : NetworkBehaviour
     float groundAttackTime;
     [SerializeField] private GameObject groundAttackParticle;
 
-
     bool axeThrow = false;
-    [SyncVar(hook = nameof(OnAxeReturnStateChange))]
+
     bool axeReturn = false;
+
     bool axeInTheAir = false;
     bool axeGroundAttack = false;
     bool axeHolded = true;
     bool classicAttack = false;
 
     public bool isCharacterActive;
-    private bool isAimLookAtUpdated = false;
    
 
     public void Awake()
@@ -72,19 +71,15 @@ public class BarbarianAction : NetworkBehaviour
 
     void Start()
     {
-    
         anim = GetComponent<Animator>();
         aimLookAt = GameObject.FindGameObjectWithTag("AimLookAt");
         anim.SetBool("AxeHolded", true);
-
-        Cursor.lockState = CursorLockMode.Locked;
-
     }
-
+  
     void Update()
     {
         if (!hasAuthority) return;
-        BarbarianBodyAimRegulation();
+        BarbarianBodyAimRegulation(lookAt.transform.position);
 
 
         if (Input.GetMouseButtonDown(0) && !axeThrow && !axeInTheAir && !axeGroundAttack && !classicAttack)
@@ -106,10 +101,11 @@ public class BarbarianAction : NetworkBehaviour
         {
             if (Time.time > groundAttackTime)
             {
+               
                 anim.SetBool("AxeGroundAttack", true);
                 StartCooldown(uiManager.groundCoolDownFill, groundAttackCoolDown);
-                bodyAim.weight = 0f;
                 axeGroundAttack = true;
+                bodyAim.weight = 0f;
 
                 groundAttackTime = 0f;
                 groundAttackTime = Time.time + groundAttackCoolDown;
@@ -183,22 +179,28 @@ public class BarbarianAction : NetworkBehaviour
         Gizmos.DrawWireSphere(transform.position + transform.forward + transform.up, punchRadius);
     } //Classic Attack Gizmos
 
+  
 
-    //[Command]
-    void BarbarianBodyAimRegulation()
+    #region BODY REGULATION
+    [Command]
+    void BarbarianBodyAimRegulation(Vector3 lookAtPos)
     {
-        RPCBarbarianBodyAimRegulation();
+        RPCBarbarianBodyAimRegulation( lookAtPos);
     }
     
-    //[ClientRpc]
-    void RPCBarbarianBodyAimRegulation()  //Body facing the target
+    [ClientRpc]
+    void RPCBarbarianBodyAimRegulation(Vector3 lookAtPos)  //Body facing the target
     {
+        if (!hasAuthority)
+        {
+            lookAt.transform.position = lookAtPos;
+            return;
+        }
+
         bodyAim.data.sourceObjects.Add(new(aimLookAt.transform, 1f));
         lookAt.transform.position = Vector3.Lerp(lookAt.transform.position, aimLookAt.transform.position, 1f);
     }
-   
-
-  
+    #endregion
 
     #region CLASSÝC ATTACK
     [Command]
@@ -235,7 +237,6 @@ public class BarbarianAction : NetworkBehaviour
 
     #region AXE THROW CONTROL
 
-
     [Command]
     public void AxeThrow() //AnimationEvent
     {
@@ -258,16 +259,17 @@ public class BarbarianAction : NetworkBehaviour
     [Command]
     public void ReturnAxe() //AnimationEvent
     {
-        axeReturn = true;
+        RpcReturnAxe();
     }
 
-    void OnAxeReturnStateChange(bool oldValue, bool newValue)
+    [ClientRpc]
+    void RpcReturnAxe()
     {
         rbAxe.gameObject.GetComponent<AxeController>().activated = true;
         time = 0f;
         oldPos = rbAxe.position;
         rbAxe.velocity = Vector3.zero;
-        axeReturn = newValue;
+        axeReturn = true;
         rbAxe.useGravity = false;
         rbAxe.isKinematic = false;
     }
@@ -328,10 +330,8 @@ public class BarbarianAction : NetworkBehaviour
     }
 
 
-
     IEnumerator GroundAttackTimeControl(float time)
     {
-
         yield return new WaitForSeconds(time);
 
         anim.SetBool("AxeGroundAttack", false);
@@ -361,9 +361,6 @@ public class BarbarianAction : NetworkBehaviour
     }
 
     #endregion
-
-
-
   
 }
 

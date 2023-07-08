@@ -526,6 +526,7 @@ MonoBehaviour:
   lookAt: {fileID: 3828349909796080119}
   rangerAiming: 0
   transitionDuration: 0
+  zOffset: 0
   classicArrowShoot: 0
   tripleArrowShoot: 0
 --- !u!114 &2984557620249713840

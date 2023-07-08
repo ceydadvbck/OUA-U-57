@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using Mirror;
+using System.Collections;
 
-[RequireComponent(typeof(NetworkIdentity))]
 public class RangerAction : NetworkBehaviour
 {
     Animator animator;
@@ -15,11 +15,10 @@ public class RangerAction : NetworkBehaviour
     [SerializeField] float arrowForce;
     [SerializeField] GameObject shootArrowLine;
     [SerializeField] GameObject[] arrowInHand;
+    GameObject prefabToInstantiate;
 
-   
 
-
-  [Space(10)]
+    [Space(10)]
 
     [Header("CoolDown")]
     public float classicAttackCoolDown;
@@ -41,7 +40,7 @@ public class RangerAction : NetworkBehaviour
     [SerializeField] private MultiRotationConstraint handRot;
     [SerializeField] private TwoBoneIKConstraint rightHand;
     [SerializeField] private TwoBoneIKConstraint leftHand;
-
+   
     [Space(10)]
 
     [Header("Aim")]
@@ -53,7 +52,6 @@ public class RangerAction : NetworkBehaviour
     private Vector3 targetOffset;
     private float transitionTimer;
 
-    [SyncVar(hook = nameof(RpcRangerArrowAttack))] GameObject arrowPrefab;
 
     [SerializeField] private bool classicArrowShoot;
     [SerializeField] private bool tripleArrowShoot;
@@ -67,7 +65,7 @@ public class RangerAction : NetworkBehaviour
 
         initialOffset = bodyAim.data.offset;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
 
@@ -76,13 +74,12 @@ public class RangerAction : NetworkBehaviour
 
         if (!hasAuthority) return;
 
-
-        RangerBodyAimRegulation();
+        CmdRangerBodyAimRegulation(lookAt.transform.position,targetOffset);
 
 
         if (Input.GetMouseButtonDown(1))
         {
-            RangerAim();
+            StartCoroutine(RangerAim());
         }
         if (Input.GetMouseButtonUp(1))
         {
@@ -95,7 +92,6 @@ public class RangerAction : NetworkBehaviour
 
         if (rangerAiming)
         {
-            bodyAim.weight = 1f;
             if (Input.GetButtonDown("Fire1"))
             {
                 if (Time.time > classicAttackTime)
@@ -140,8 +136,16 @@ public class RangerAction : NetworkBehaviour
         }
         else
         {
-            RangerAimNot();
-          
+
+            if (isServer)
+            {
+                RpcRangerAimNot();
+            }
+            else
+            {
+                CmdRangerAimNot();
+            }
+
             rightHand.weight = 0f;
             leftHand.weight = 0f;
             shootArrowLine.SetActive(false);
@@ -149,54 +153,77 @@ public class RangerAction : NetworkBehaviour
 
         }
     }
+
+
     #region BODY REGULATÝON
-    void RangerBodyAimRegulation()
-    {
-        CmdRangerBodyAimRegulation();
-    }
+
     [Command]
-    void CmdRangerBodyAimRegulation() 
+    void CmdRangerBodyAimRegulation(Vector3 lookAtPos, Vector3 offset)
     {
-        RpcRangerBodyAimRegulation();
+        RpcRangerBodyAimRegulation(lookAtPos, offset);
     }
+
     [ClientRpc]
-    public void RpcRangerBodyAimRegulation( )
+    public void RpcRangerBodyAimRegulation(Vector3 lookAtPos, Vector3 offset)
     {
-       
+        if (!hasAuthority)
+        {
+            lookAt.transform.position = lookAtPos;
+            bodyAim.data.offset = offset;
+            return;
+        }
+
         handAim.data.sourceObjects.Add(new(aimLookAt.transform, 1f));
         lookAt.transform.position = Vector3.Lerp(lookAt.transform.position, aimLookAt.transform.position, 1f);
-    
+
         float rotX = mainCam.transform.rotation.eulerAngles.x;
         targetOffset = new Vector3(0, 95, rotX);
-    
+
         transitionTimer = 0f;
         transitionTimer += Time.deltaTime;
-    
+
         float t = Mathf.Clamp01(transitionTimer / transitionDuration);
-    
+
         bodyAim.data.offset = Vector3.Lerp(initialOffset, targetOffset, t);
     }
+
+
+
+
+
     #endregion
 
     #region RANGER AÝM
+
     [Command]
-    public void RangerAim()
+    public void CmdRangerAim(float weight)
     {
-        RpcRangerAim();
+        bodyAim.weight = weight;
+        RpcRangerAim(weight);
     }
+
     [ClientRpc]
-    public void RpcRangerAim()
+    public void RpcRangerAim(float weight)
     {
-        bodyAim.weight += 1f;
+        bodyAim.weight = weight;
 
         animator.SetBool("ArrowAim", true);
         rangerAiming = true;
+    }
 
-    }
-    public void RangerAimNot()
+    public IEnumerator RangerAim()
     {
-        CmdRangerAimNot();
+        float aimWeight = 1f; // Hedef aðýrlýk deðeri
+        CmdRangerAim(aimWeight);
+
+        yield return new WaitForSeconds(0.1f); // Gerekli gecikme süresi
+
+        if (!isServer)
+        {
+            bodyAim.weight = aimWeight;
+        }
     }
+
     [Command]
     public void CmdRangerAimNot()
     {
@@ -210,41 +237,49 @@ public class RangerAction : NetworkBehaviour
     }
     #endregion
 
-   
-    public void RangerArrowAttack(GameObject newPrefab)
+
+    #region RANGER ATTACK
+
+    public void RangerArrowAttack() //AnimationEvent
     {
-        CmdRangerArrowAttack( newPrefab);
+        CmdRangerArrowAttack(classicArrowShoot,tripleArrowShoot);
     }
 
     [Command]
-    public void CmdRangerArrowAttack(GameObject newPrefab)
+    public void CmdRangerArrowAttack(bool isClassicArrowShoot, bool isTripleArrowShoot)
     {
-        RpcRangerArrowAttack(arrowPrefab,newPrefab);
+        RpcRangerArrowAttack(isClassicArrowShoot,isTripleArrowShoot);
     }
 
     [ClientRpc]
-    public void RpcRangerArrowAttack(GameObject oldValue, GameObject newValue)
+    public void RpcRangerArrowAttack(bool isClassicArrowShoot, bool isTripleArrowShoot)
     {
-        
-        arrowPrefab = classicArrowShoot ? arrow : iceArrow;
-        arrowPrefab = oldValue;
-        if (!tripleArrowShoot)
-        {
-            animator.SetBool("ArrowAimShoot", false);
-            arrowInHand[0].SetActive(false);
+        prefabToInstantiate = isClassicArrowShoot ? arrow : iceArrow;
 
-            GameObject arrowClone = GameObject.Instantiate(arrowPrefab, arrowSpawnPoint[0].transform.position, arrowSpawnPoint[0].transform.rotation) as GameObject;
-            Rigidbody arrowRb = arrowClone.GetComponentInChildren<Rigidbody>();
-            arrowRb.AddForce(arrowSpawnPoint[0].transform.forward * arrowForce, ForceMode.Impulse);
-        }
-        else
+        if (prefabToInstantiate != null)
         {
-            TripleArrowAttack();
-            animator.SetBool("ArrowAimShoot", false);
+            if (!isTripleArrowShoot)
+            {
+                animator.SetBool("ArrowAimShoot", false);
+                arrowInHand[0].SetActive(false);
+
+                GameObject arrowClone = Instantiate(prefabToInstantiate, arrowSpawnPoint[0].transform.position, arrowSpawnPoint[0].transform.rotation) as GameObject;
+                Rigidbody arrowRb = arrowClone.GetComponentInChildren<Rigidbody>();
+                arrowRb.AddForce(arrowSpawnPoint[0].transform.forward * arrowForce, ForceMode.Impulse);
+            }
+            else
+            {
+                TripleArrowAttack();
+                animator.SetBool("ArrowAimShoot", false);
+            }
         }
     }
 
 
+    #endregion
+
+
+    #region ACTÝVE ARROW
     public void ActiveArrow()//ArrowInHand- AnimationEvent
     {
         CmdActiveArrow();
@@ -260,6 +295,8 @@ public class RangerAction : NetworkBehaviour
     {
         arrowInHand[0].SetActive(true);
     }
+    #endregion
+
 
     #region TRÝPLLEATTACK
 

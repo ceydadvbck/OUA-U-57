@@ -3250,7 +3250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 515022909090303059}
+  - {fileID: 1516226860620069198}
   m_Father: {fileID: 9007124458271685028}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 5.499, y: -9.213, z: 164.214}
@@ -3740,8 +3740,8 @@ MonoBehaviour:
   syncInterval: 0
   bodyAim: {fileID: 9059723747404927812}
   lookAt: {fileID: 7885326000540130348}
-  rbAxe: {fileID: 8612220820951265787}
-  axeCol: {fileID: 1669960835762934665}
+  rbAxe: {fileID: 7326164609338688742}
+  axeCol: {fileID: 361385664204826260}
   axeParent: {fileID: 7458216456343873352}
   classicAttackCoolDown: 1
   throwAttackCoolDown: 1
@@ -4435,7 +4435,7 @@ Transform:
   m_Father: {fileID: 9007124458271685028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6563907271438143060
+--- !u!1001 &5276156296041773897
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4446,9 +4446,9 @@ PrefabInstance:
       propertyPath: barbarianAnim
       value: 
       objectReference: {fileID: 3756145689943309309}
-    - target: {fileID: 3212033932424478639, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
+    - target: {fileID: 3490921688482846515, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
+      propertyPath: _assetId
+      value: 4194246741
       objectReference: {fileID: 0}
     - target: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
       propertyPath: m_RootOrder
@@ -4498,24 +4498,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarbarianAxe
       objectReference: {fileID: 0}
-    - target: {fileID: 6944536003887227924, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-      propertyPath: _assetId
-      value: 4194246741
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
---- !u!4 &515022909090303059 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-  m_PrefabInstance: {fileID: 6563907271438143060}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1669960835762934665 stripped
+--- !u!65 &361385664204826260 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 5493065992334106077, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-  m_PrefabInstance: {fileID: 6563907271438143060}
+  m_PrefabInstance: {fileID: 5276156296041773897}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &8612220820951265787 stripped
+--- !u!4 &1516226860620069198 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6643394912650297863, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
+  m_PrefabInstance: {fileID: 5276156296041773897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &7326164609338688742 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3212033932424478639, guid: 8e86ec99f627cbe45be1c7426f5f8d9c, type: 3}
-  m_PrefabInstance: {fileID: 6563907271438143060}
+  m_PrefabInstance: {fileID: 5276156296041773897}
   m_PrefabAsset: {fileID: 0}

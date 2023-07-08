@@ -25,7 +25,6 @@ public class AxeController : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.LogError(collision.gameObject.name);
         activated = false;
         if (collision.gameObject.CompareTag("Skeleton"))
         {
