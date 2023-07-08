@@ -1,1 +1,0 @@
-Please don't change the mesh normal, all meshes have custom vertex normals applied, if changed, the normal maps won't work properly!
