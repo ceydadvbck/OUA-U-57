@@ -11,11 +11,6 @@ TagManager:
   - PlayerAimCamera
   - Arrow
   - Ground
-  - ArrowTarget
-  - IceArrow
-  - Barbarian
-  - Axe
-  - GroundAttackDamageBox
   layers:
   - Default
   - TransparentFX
