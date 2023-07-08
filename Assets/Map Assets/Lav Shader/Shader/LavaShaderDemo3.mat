@@ -55,22 +55,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BottomPower: 1
-    - _FresnelPower: 6
+    - _BottomPower: 2.62
+    - _FresnelPower: 3.24
     - _Metalic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SimpleNoiseAmount: 0.5
+    - _SimpleNoiseAmount: -0.05
     - _SimpleNoisePower: 3
     - _SimpleNoiseScale: 20
     - _Smotness: 0.5
-    - _VoronoidAmount: 5
-    - _VoronoidAngleOffset: 0.5
-    - _VoronoidScale: 20
+    - _VoronoidAmount: 9.47
+    - _VoronoidAngleOffset: 11
+    - _VoronoidScale: 25.19
     m_Colors:
     - _BottomReMap: {r: 0, g: 1.18, b: 0, a: 0}
     - _FresnelColor: {r: 69.40291, g: 14.549187, b: 0, a: 1}
-    - _LavaColor: {r: 9.42896, g: 1.7836665, b: 0, a: 1}
+    - _LavaColor: {r: 9.428959, g: 0.73713785, b: 0, a: 1}
     - _LavaNormalSpeed: {r: 0, g: 0.05, b: 0, a: 0}
     - _LavaReMap: {r: -0.12, g: 6.7, b: 0, a: 0}
     - _LavaScale: {r: 4, g: 4, b: 0, a: 0}
