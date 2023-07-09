@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  - component: {fileID: 6495922}
+  - component: {fileID: 8571879315891019244}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6495922
-MeshCollider:
+--- !u!65 &8571879315891019244
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,10 +95,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300500, guid: 628e5212ccbe5044ba8b70740d37394e, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.7356834, y: 1.2289863, z: 2.8070908}
+  m_Center: {x: -0.00000071525574, y: 0, z: 0.00000059604645}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +143,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 3300002}
   - component: {fileID: 2300002}
-  - component: {fileID: 6437250}
+  - component: {fileID: 2569128837965921071}
   m_Layer: 0
   m_Name: Debris
   m_TagString: Untagged
@@ -217,8 +216,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6437250
-MeshCollider:
+--- !u!65 &2569128837965921071
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,10 +226,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300498, guid: 628e5212ccbe5044ba8b70740d37394e, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.9533081, y: 0.73057723, z: 1.2049332}
+  m_Center: {x: 0.00000035762787, y: 0, z: 0}
 --- !u!1 &192822
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +240,7 @@ GameObject:
   - component: {fileID: 401920}
   - component: {fileID: 3321692}
   - component: {fileID: 2393072}
-  - component: {fileID: 6445930}
+  - component: {fileID: 6002035252911250588}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -316,8 +314,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6445930
-MeshCollider:
+--- !u!65 &6002035252911250588
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -326,7 +324,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300496, guid: 628e5212ccbe5044ba8b70740d37394e, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.2088699, y: 3.4213212, z: 1.2088699}
+  m_Center: {x: 0, y: 1.7106606, z: 0}
