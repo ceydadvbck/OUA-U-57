@@ -10,6 +10,10 @@ Material:
   m_Name: FlameRoundYellowParticle
   m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_ValidKeywords:
+<<<<<<<< HEAD:Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion Effects/Materials/Flame03.mat
+  - _EMISSION
+========
+>>>>>>>> f2229b9131543611c9812259a261366ed4aadf12:Assets/UnityTechnologies/ParticlePack/EffectExamples/FireExplosionEffects/Materials/FlameRoundYellowParticle.mat
   - _FADING_ON
   - _SOFTPARTICLES_ON
   - _SURFACE_TYPE_TRANSPARENT
@@ -119,7 +123,11 @@ Material:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1.0592737, g: 1.0592737, b: 1.0592737, a: 1}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
+<<<<<<<< HEAD:Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion Effects/Materials/Flame03.mat
+    - _EmissionColor: {r: 2.691177, g: 1.7967563, b: 0.45512548, a: 1}
+========
     - _EmissionColor: {r: 0.16301486, g: 0.10924556, b: 0.028164871, a: 1}
+>>>>>>>> f2229b9131543611c9812259a261366ed4aadf12:Assets/UnityTechnologies/ParticlePack/EffectExamples/FireExplosionEffects/Materials/FlameRoundYellowParticle.mat
     - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
