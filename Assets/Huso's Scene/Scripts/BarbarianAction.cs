@@ -324,7 +324,7 @@ public class BarbarianAction : NetworkBehaviour
     void RPCBarbarianGroundAttack()
     {
         GameObject cloneGroundAttackParticle = Instantiate(groundAttackParticle, groundAttackPoint.position, gameObject.transform.rotation);
-        Destroy(cloneGroundAttackParticle, 2f);
+        Destroy(cloneGroundAttackParticle, 3.5f);
 
         StartCoroutine(GroundAttackTimeControl(0.75f));
     }
