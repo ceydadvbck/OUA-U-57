@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400006}
+  - component: {fileID: 1425014454432882491}
   m_Layer: 0
   m_Name: Cell_Seat
   m_TagString: Untagged
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1425014454432882491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0270228, y: 0.91913795, z: 4.1320786}
+  m_Center: {x: -0.20502633, y: 0.47129917, z: 0.03914237}
 --- !u!1 &153208
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +59,6 @@ GameObject:
   - component: {fileID: 486118}
   - component: {fileID: 3363730}
   - component: {fileID: 2377912}
-  - component: {fileID: 6420942}
   m_Layer: 0
   m_Name: Stone_2
   m_TagString: Untagged
@@ -118,20 +131,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6420942
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153208}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300226, guid: fd75e63c14c4540438372a6844af68b6, type: 3}
 --- !u!1 &155408
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +142,6 @@ GameObject:
   - component: {fileID: 486584}
   - component: {fileID: 3359040}
   - component: {fileID: 2358284}
-  - component: {fileID: 6416724}
   m_Layer: 0
   m_Name: Wood_Seat
   m_TagString: Untagged
@@ -216,20 +214,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6416724
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155408}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300222, guid: fd75e63c14c4540438372a6844af68b6, type: 3}
 --- !u!1 &164756
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +225,6 @@ GameObject:
   - component: {fileID: 401634}
   - component: {fileID: 3365630}
   - component: {fileID: 2385142}
-  - component: {fileID: 6430832}
   - component: {fileID: 6402952}
   m_Layer: 0
   m_Name: Stone_1
@@ -315,20 +298,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6430832
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164756}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300224, guid: fd75e63c14c4540438372a6844af68b6, type: 3}
 --- !u!64 &6402952
 MeshCollider:
   m_ObjectHideFlags: 0
