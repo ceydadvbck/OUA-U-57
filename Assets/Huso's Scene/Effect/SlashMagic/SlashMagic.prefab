@@ -9712,8 +9712,9 @@ GameObject:
   - component: {fileID: 1379504315796101638}
   - component: {fileID: 5207987601858127898}
   - component: {fileID: 6431413487398508931}
+  - component: {fileID: -5995607796184193213}
   m_Layer: 0
-  m_Name: Stone slash
+  m_Name: SlashMagic
   m_TagString: SlashMagic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9727,7 +9728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3153472991145048103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.016000401, y: -1, z: 0.2659978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9754,7 +9755,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9822,7 +9823,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -14590,6 +14591,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8763789, y: 0.29629326, z: 4.7632194}
   m_Center: {x: -1.5723703, y: 0.06345272, z: 0.12002778}
+--- !u!114 &-5995607796184193213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153472991145048103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b95e19b150a454c8a3162dca89f76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &3307283671839139976
 GameObject:
   m_ObjectHideFlags: 0

@@ -3433,7 +3433,7 @@ GameObject:
   - component: {fileID: 5258441513611831466}
   m_Layer: 0
   m_Name: Barbarian
-  m_TagString: Barbarian
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3767,7 +3767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80c8654f7bbe2e4ea101a905b495c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  maxHealth:
+    baseValue: 100
+  damage:
+    baseValue: 15
+  armor:
+    baseValue: 15
 --- !u!1 &7660367535426181222
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ using UnityEngine;
 
 /* Contains all the stats for a character. */
 
-public class CharacterStats : MonoBehaviour
+public class CharacterHealth : MonoBehaviour
 {
 
 	public Stat maxHealth;          // Maximum amount of health

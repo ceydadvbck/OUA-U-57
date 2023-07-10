@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 3342289499050016692}
   - component: {fileID: 8683536308160243150}
   - component: {fileID: 3019817388133913896}
+  - component: {fileID: 5866666021627376762}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -799,10 +800,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2821612, y: 28.116837, z: 11.545084}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 7075823912481365792}
   - {fileID: 563372358428307228}
+  - {fileID: 7075823912481365792}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -839,7 +840,41 @@ CapsuleCollider:
   m_Radius: 0.4168402
   m_Height: 2.184229
   m_Direction: 1
-  m_Center: {x: 0.025137067, y: 1.026742, z: 0}
+  m_Center: {x: 0, y: 1.026742, z: 0}
+--- !u!114 &5866666021627376762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677920199932683534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad6532f90a465a42ac39d82d4e961af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonSpawnTime: 0
+  startTime: 0
+  spawnSkeleton:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _weight: 0
+  RedMagicParticle: {fileID: 0}
+  redMagicTime: 0
+  WhiteMagicParticle: {fileID: 0}
+  whiteMagicTime: 0
+  SlashMagicParticle: {fileID: 0}
+  splashMagicTime: 0
+  skeleton: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+  skillAreaCol: {fileID: 0}
 --- !u!1 &2805051484288665173
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,8 +898,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2805051484288665173}
-  m_LocalRotation: {x: -0.036075808, y: 0.3687798, z: 0.014306591, w: 0.9287063}
-  m_LocalPosition: {x: -0.0019084311, y: 1.1169118, z: -0.010225124}
+  m_LocalRotation: {x: -0.03607581, y: 0.36877978, z: 0.014306591, w: 0.92870635}
+  m_LocalPosition: {x: -0.0019082259, y: 1.1169118, z: -0.010225093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -873,7 +908,7 @@ Transform:
   - {fileID: 6392843752708843551}
   - {fileID: 7375376170459655347}
   m_Father: {fileID: 3342289499050016692}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2848215686333968682
 GameObject:
@@ -1382,7 +1417,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3342289499050016692}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &8138995258204145617
 SkinnedMeshRenderer:
