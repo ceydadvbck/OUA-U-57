@@ -5,23 +5,33 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     Animator anim;
+    [SerializeField] private GameObject skeleton;
 
+    [Space(10)]
 
     [Header("Spawn")]
-    public float spawnTime;
-    public  Transform[] spawnSkeleton;
+    [SerializeField] float skeletonSpawnTime;
+    [SerializeField] private float startTime;
+    [SerializeField] Transform[] spawnSkeleton;
     private System.Random rand = new System.Random();
     [HideInInspector] public double _weight;
+    
+    [Space(10)]
 
     [Header("Skill")]
-   [SerializeField] private GameObject RedMagicParticle;
-   [SerializeField] private GameObject WhiteMagicParticle;
-   [SerializeField] private GameObject SlashMagicParticle;
+    [SerializeField] private CapsuleCollider skillAreaCol;
+    private Vector3 skillArea;
+    [SerializeField] private GameObject RedMagicParticle;
+    [Range(0f, 50f)]
+    [SerializeField] float redMagicTime;
+    [SerializeField] private GameObject WhiteMagicParticle;
+    [Range(0f, 50f)]
+    [SerializeField] float whiteMagicTime;
+    [SerializeField] private GameObject SlashMagicParticle;
+    [Range(0f, 50f)]
+    [SerializeField] float slashMagicTime;
+    GameObject slashMagicClone;
 
-
-
-    bool isStandUp;
-    [SerializeField] private GameObject skeleton;
 
     public void Start()
     {
@@ -30,21 +40,69 @@ public class BossController : MonoBehaviour
     }
 
 
+    public void Update()
+    {
+        if (slashMagicClone != null)
+        {
+            slashMagicClone.transform.Translate(-Vector3.right * 15f * Time.deltaTime);
+        }
+    }
 
     public void SkeletonSpawn()
     {
-        InvokeRepeating("SpawnRandomEnemy", 0f, spawnTime);
+        InvokeRepeating("SpawnRandomSkeleton", startTime, skeletonSpawnTime);
+        InvokeRepeating("RedMagic", startTime, redMagicTime);
+        InvokeRepeating("WhiteMagic", startTime, whiteMagicTime);
+        InvokeRepeating("SlashMagic", startTime, slashMagicTime);
     }
 
-
-    private void SpawnRandomEnemy()
+    private void SpawnRandomSkeleton()
     {
         for (int i = 0; i < spawnSkeleton.Length; i++)
         {
-            Vector3 spawnPoint =  spawnSkeleton[i].transform.position;
+            Vector3 spawnPoint = spawnSkeleton[i].transform.position;
 
             Instantiate(skeleton, spawnPoint, Quaternion.identity);
         }
+    }
+
+    void RedMagic() //AnimationEvent
+    {
+        anim.SetTrigger("RedMagic");
+
+        skillArea = new Vector3(
+        Random.Range(skillAreaCol.bounds.min.x, skillAreaCol.bounds.max.x),
+        Random.Range(skillAreaCol.bounds.min.y, skillAreaCol.bounds.max.y),
+        Random.Range(skillAreaCol.bounds.min.z, skillAreaCol.bounds.max.z));
+
+        skillArea.y = 0f;
+        GameObject redMagicClone = Instantiate(RedMagicParticle, skillArea, Quaternion.identity, skillAreaCol.transform);
+        Destroy(redMagicClone, 5f);
+
+    }
+
+    void WhiteMagic() //AnimationEvent
+    {
+        anim.SetTrigger("WhiteMagic");
+
+        skillArea = new Vector3(
+        Random.Range(skillAreaCol.bounds.min.x, skillAreaCol.bounds.max.x),
+        Random.Range(skillAreaCol.bounds.min.y, skillAreaCol.bounds.max.y),
+        Random.Range(skillAreaCol.bounds.min.z, skillAreaCol.bounds.max.z));
+
+        skillArea.y = 0f;
+        GameObject whiteMagicClone = Instantiate(WhiteMagicParticle, skillArea, Quaternion.identity, skillAreaCol.transform);
+        Destroy(whiteMagicClone, 5f);
+    }
+
+    void SlashMagic() //AnimationEvent
+    {
+        anim.SetTrigger("SlashMagic");
+
+
+        slashMagicClone = Instantiate(SlashMagicParticle, new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z), transform.rotation, skillAreaCol.transform);
+        slashMagicClone.transform.rotation = Quaternion.Euler(0, Random.Range(0,180), 0);
+        Destroy(slashMagicClone, 2f);
     }
 
 }
