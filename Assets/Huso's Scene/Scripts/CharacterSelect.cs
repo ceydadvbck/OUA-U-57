@@ -26,6 +26,7 @@ public class CharacterSelect : NetworkBehaviour
             CmdSelect(0);
             characterSelected[0] = true;
             characterSelectDisplay.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void RangerButton()
@@ -35,6 +36,7 @@ public class CharacterSelect : NetworkBehaviour
             CmdSelect(1);
             characterSelected[1] = true;
             characterSelectDisplay.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     

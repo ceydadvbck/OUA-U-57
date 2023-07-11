@@ -189,8 +189,6 @@ public class RangerAction : NetworkBehaviour
 
 
 
-
-
     #endregion
 
     #region RANGER AÝM
@@ -214,10 +212,9 @@ public class RangerAction : NetworkBehaviour
     public IEnumerator RangerAim()
     {
         float aimWeight = 1f; // Hedef aðýrlýk deðeri
-        CmdRangerAim(aimWeight);
-
+       
         yield return new WaitForSeconds(0.1f); // Gerekli gecikme süresi
-
+        CmdRangerAim(aimWeight);
         if (!isServer)
         {
             bodyAim.weight = aimWeight;
@@ -255,7 +252,7 @@ public class RangerAction : NetworkBehaviour
     public void RpcRangerArrowAttack(bool isClassicArrowShoot, bool isTripleArrowShoot)
     {
         prefabToInstantiate = isClassicArrowShoot ? arrow : iceArrow;
-
+        Debug.Log(isClassicArrowShoot);
         if (prefabToInstantiate != null)
         {
             if (!isTripleArrowShoot)
