@@ -25,25 +25,25 @@ public class CharacterCombat : MonoBehaviour
 		attackCooldown -= Time.deltaTime;
 	}
 
-	public void Attack(CharacterHealth targetStats)
-	{
-		if (attackCooldown <= 0f)
-		{
-			StartCoroutine(DoDamage(targetStats, attackDelay));
+	//public void Attack(CharacterHealth targetStats)
+	//{
+	//	if (attackCooldown <= 0f)
+	//	{
+	//		StartCoroutine(DoDamage(targetStats, attackDelay));
 
-			if (OnAttack != null)
-				OnAttack();
+	//		if (OnAttack != null)
+	//			OnAttack();
 
-			attackCooldown = 1f / attackSpeed;
-		}
+	//		attackCooldown = 1f / attackSpeed;
+	//	}
 
-	}
+	//}
 
 	IEnumerator DoDamage(CharacterHealth stats, float delay)
 	{
 		yield return new WaitForSeconds(delay);
 
-		stats.TakeDamage(myStats.damage.GetValue());
+		//stats.TakeDamage(myStats.damage.GetValue());
 	}
 
 }

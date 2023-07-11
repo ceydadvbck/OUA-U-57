@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
 				CharacterHealth targetStats = target.GetComponent<CharacterHealth>();
 				if (targetStats != null)
 				{
-					combat.Attack(targetStats);
+				//	combat.Attack(targetStats);
 				}
 
 				FaceTarget();   // Make sure to face towards the target
