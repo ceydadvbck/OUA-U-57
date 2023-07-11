@@ -7,13 +7,4 @@ using UnityEngine;
 public class EnemyStats : CharacterHealth
 {
 
-	public override void Die()
-	{
-		base.Die();
-
-		// Add ragdoll effect / death animation
-
-		Destroy(gameObject);
-	}
-
 }
