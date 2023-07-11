@@ -11,7 +11,6 @@ public class HammerMove : MonoBehaviour
     private void Update()
     {
         float rotationDelta = speed * Time.deltaTime;
-        Debug.Log(isRotatingDown);
         if (isRotatingDown)
         {
             transform.Rotate(Vector3.down, rotationDelta);
@@ -20,15 +19,6 @@ public class HammerMove : MonoBehaviour
                 isRotatingDown = false;
             }
         }
-        Debug.Log(isRotatingDown);
-        //else
-        //{
-        //    transform.Rotate(Vector3.up, rotationDelta);
-        //    if (transform.rotation.x >= 0)
-        //    {
-        //        isRotatingDown = true;
-        //    }
-        //}
 
     }
 
