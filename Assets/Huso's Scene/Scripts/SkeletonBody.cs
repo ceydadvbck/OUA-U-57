@@ -7,7 +7,7 @@ public class SkeletonBody : MonoBehaviour
     [SerializeField] SkeletonBody[] childLimbs;
 
     [SerializeField] GameObject limbPrefab;
-
+    [SerializeField] private GameObject skeletonFireParticle;
     public void GetHit()
     {
         if (limbPrefab != null)
@@ -26,7 +26,15 @@ public class SkeletonBody : MonoBehaviour
         if (col.gameObject.transform.CompareTag("GroundAttackDamageBox"))
         {
             GetHit();
-         
+
+        }
+        if (col.gameObject.transform.CompareTag("TripleArrow"))
+        {
+            GameObject skeletonFireParticleClone = Instantiate(skeletonFireParticle, gameObject.transform.position, transform.rotation, gameObject.transform);
+
+            Destroy(skeletonFireParticleClone, 3f);
+            Invoke("GetHit", 2f);
+
         }
     }
 }

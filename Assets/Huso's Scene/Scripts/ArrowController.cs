@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class ArrowController : MonoBehaviour
@@ -14,11 +15,11 @@ public class ArrowController : MonoBehaviour
     [SerializeField] private Material iceMaterial;
     [SerializeField] private GameObject iceImpactParticle;
     [SerializeField] private GameObject iceCrackParticle;
-    [SerializeField] private GameObject skeletonFireParticle;
     bool ice›mpactActive;
+  
 
 
-
+  
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,11 +31,10 @@ public class ArrowController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Skeleton") && gameObject.CompareTag("Arrow"))
         {
-            Destroy(transform.parent.gameObject,3f);
+            Destroy(transform.parent.gameObject, 3f);
             SkeletonBody skeletonBody = other.gameObject.GetComponentInParent<SkeletonBody>();
             skeletonBody.GetHit();
             rb.isKinematic = true;
-            GameObject skeletonFireParticleClone = Instantiate(skeletonFireParticle, other.gameObject.transform);
         }
 
         if (other.gameObject.CompareTag("Ground") && gameObject.CompareTag("IceArrow") && iceImpactParticle != null && !ice›mpactActive)
@@ -82,6 +82,9 @@ public class ArrowController : MonoBehaviour
 
         Destroy(transform.parent.gameObject, 7f);
     }
+
+
+  
 
 
     IEnumerator ArrowEffectControl()

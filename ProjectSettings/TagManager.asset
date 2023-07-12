@@ -20,6 +20,7 @@ TagManager:
   - RedMagic
   - SlashMagic
   - WhiteMagic
+  - TripleArrow
   layers:
   - Default
   - TransparentFX

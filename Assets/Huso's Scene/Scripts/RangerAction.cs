@@ -193,6 +193,8 @@ public class RangerAction : NetworkBehaviour
 
     #region RANGER AÝM
 
+   
+
     [Command]
     public void CmdRangerAim(float weight)
     {
@@ -213,7 +215,7 @@ public class RangerAction : NetworkBehaviour
     {
         float aimWeight = 1f; // Hedef aðýrlýk deðeri
        
-        yield return new WaitForSeconds(0.1f); // Gerekli gecikme süresi
+        yield return new WaitForSeconds(0.5f); // Gerekli gecikme süresi
         CmdRangerAim(aimWeight);
         if (!isServer)
         {
