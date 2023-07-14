@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1052,6 +1052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 2916186665
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1 &649483264
@@ -1501,6 +1505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1585,6 +1590,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &711078621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,6 +2312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 559180199
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &975036397 stripped
@@ -2922,6 +2951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 809546809
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!4 &1671465342 stripped
@@ -3535,6 +3568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1013197426
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &1934461708
@@ -3591,6 +3628,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 418173565
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -3865,6 +3906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 552716414
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
 --- !u!1001 &2089558430
@@ -3921,6 +3966,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1532328461
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -3982,6 +4031,10 @@ PrefabInstance:
     - target: {fileID: 1928480545116607186, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714253185726827458, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+      propertyPath: sceneId
+      value: 1006508408
       objectReference: {fileID: 0}
     - target: {fileID: 8023861192803096406, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
       propertyPath: m_Enabled

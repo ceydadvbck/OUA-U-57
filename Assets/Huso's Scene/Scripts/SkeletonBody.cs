@@ -28,7 +28,12 @@ public class SkeletonBody : MonoBehaviour
             GetHit();
 
         }
-        if (col.gameObject.transform.CompareTag("TripleArrow"))
+        
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.transform.CompareTag("TripleArrow"))
         {
             GameObject skeletonFireParticleClone = Instantiate(skeletonFireParticle, gameObject.transform.position, transform.rotation, gameObject.transform);
 

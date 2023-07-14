@@ -31,9 +31,13 @@ public class ArrowController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Skeleton") && gameObject.CompareTag("Arrow"))
         {
-            Destroy(transform.parent.gameObject, 3f);
+            Destroy(transform.parent.gameObject);
             SkeletonBody skeletonBody = other.gameObject.GetComponentInParent<SkeletonBody>();
             skeletonBody.GetHit();
+            rb.isKinematic = true;
+        }
+        if (other.gameObject.CompareTag("Ground") && gameObject.CompareTag("TripleArrow"))
+        {
             rb.isKinematic = true;
         }
 
