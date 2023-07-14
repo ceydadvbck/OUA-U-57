@@ -490,6 +490,8 @@ GameObject:
   - component: {fileID: 5866666019891217176}
   - component: {fileID: 2714253185726827458}
   - component: {fileID: 3943056745756418590}
+  - component: {fileID: 512758589}
+  - component: {fileID: 512758588}
   m_Layer: 3
   m_Name: EnemeySkeleton
   m_TagString: Skeleton
@@ -567,6 +569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childLimbs: []
   limbPrefab: {fileID: 1393892154479712931, guid: f9e104e0f2d9bc1458f5813f118d41ca, type: 3}
+  skeletonFireParticle: {fileID: 1000010823978654, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
 --- !u!195 &5866666019891217176
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -581,7 +584,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -618,8 +621,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6b38881c3fdeb469682abec5fbcfe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   lookRadius: 10
-  targets: []
+  target:
+  - {fileID: 0}
+--- !u!114 &512758589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928480545116607186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 1263407554245757032}
+  clientAuthority: 0
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  sendIntervalMultiplier: 1
+  timelineOffset: 0
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChange: 1
+  bufferResetMultiplier: 3
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+--- !u!114 &512758588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928480545116607186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  clientAuthority: 1
+  animator: {fileID: 5145550240855675410}
 --- !u!1 &2364199428693572296
 GameObject:
   m_ObjectHideFlags: 0

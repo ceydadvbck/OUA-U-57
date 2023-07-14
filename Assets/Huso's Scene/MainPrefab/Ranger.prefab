@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 8716423074023771959}
   m_Layer: 0
   m_Name: Ranger
-  m_TagString: Ranger
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,7 +526,6 @@ MonoBehaviour:
   lookAt: {fileID: 3828349909796080119}
   rangerAiming: 0
   transitionDuration: 0
-  zOffset: 0
   classicArrowShoot: 0
   tripleArrowShoot: 0
 --- !u!114 &2984557620249713840
@@ -642,7 +641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80c8654f7bbe2e4ea101a905b495c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  maxHealth:
+    baseValue: 0
+  damage:
+    baseValue: 0
+  armor:
+    baseValue: 0
 --- !u!1 &1205946119728767991
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,8 @@ public class RangerAction : NetworkBehaviour
     private Vector3 initialOffset;
     private Vector3 targetOffset;
     private float transitionTimer;
+    [SyncVar(hook = nameof(OnWeightChanged))]
+    private float syncWeight;
 
 
     [SerializeField] private bool classicArrowShoot;
@@ -79,7 +81,14 @@ public class RangerAction : NetworkBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            StartCoroutine(RangerAim());
+            if (!rangerAiming)
+            {
+                RangerAim(1f);
+            }
+            else
+            {
+                StopRangerAim();
+            }
         }
         if (Input.GetMouseButtonUp(1))
         {
@@ -155,6 +164,8 @@ public class RangerAction : NetworkBehaviour
     }
 
 
+ 
+
     #region BODY REGULATÝON
 
     [Command]
@@ -192,37 +203,49 @@ public class RangerAction : NetworkBehaviour
     #endregion
 
     #region RANGER AÝM
+    private void StopRangerAim()
+    {
+        CmdRangerAim(0f);
+    }
+    private void RangerAim(float aimWeight)
+    {
+        SetAimLocal(aimWeight);
+        CmdRangerAim(aimWeight);
+    }
 
-   
+    void SetAimLocal(float value)
+    {
+        // set sync var because this function is called on owner, server and client
+        syncWeight = value;
+
+        if (bodyAim != null)
+        {
+            bodyAim.weight = value;
+        }
+
+        if (animator != null)
+        {
+            animator.SetBool("ArrowAim", value > 0f);
+        }
+
+        rangerAiming = value > 0f;
+    }
 
     [Command]
-    public void CmdRangerAim(float weight)
+    private void CmdRangerAim(float weight)
     {
-        bodyAim.weight = weight;
-        RpcRangerAim(weight);
+        // SetAimLocal will set syncvar
+        SetAimLocal(weight);
     }
 
-    [ClientRpc]
-    public void RpcRangerAim(float weight)
+    private void OnWeightChanged(float oldValue, float newValue)
     {
-        bodyAim.weight = weight;
-
-        animator.SetBool("ArrowAim", true);
-        rangerAiming = true;
-    }
-
-    public IEnumerator RangerAim()
-    {
-        float aimWeight = 1f; // Hedef aðýrlýk deðeri
-       
-        yield return new WaitForSeconds(0.5f); // Gerekli gecikme süresi
-        CmdRangerAim(aimWeight);
-        if (!isServer)
+        // dont run on owner, they set it themselves 
+        if (!isLocalPlayer)
         {
-            bodyAim.weight = aimWeight;
+            SetAimLocal(newValue);
         }
     }
-
     [Command]
     public void CmdRangerAimNot()
     {
