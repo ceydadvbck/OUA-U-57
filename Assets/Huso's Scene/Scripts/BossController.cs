@@ -36,7 +36,7 @@ public class BossController : MonoBehaviour
     public void Start()
     {
         anim = GetComponent<Animator>();
-        SkeletonSpawn();
+        InvokeFunctionControl();
     }
 
 
@@ -48,15 +48,16 @@ public class BossController : MonoBehaviour
         }
     }
 
-    public void SkeletonSpawn()
+    public void InvokeFunctionControl()
     {
-        InvokeRepeating("SpawnRandomSkeleton", startTime, skeletonSpawnTime);
-        InvokeRepeating("RedMagic", startTime, redMagicTime);
-        InvokeRepeating("WhiteMagic", startTime, whiteMagicTime);
-        InvokeRepeating("SlashMagic", startTime, slashMagicTime);
+        InvokeRepeating("SkeletonSpawnMagicAnimationEvent", startTime, skeletonSpawnTime);
+        InvokeRepeating("RedMagicAnimationEvent", startTime, redMagicTime);
+        InvokeRepeating("WhiteMagicAnimationEvent", startTime, whiteMagicTime);
+        InvokeRepeating("SlashMagicAnimationEvent", startTime, slashMagicTime);
     }
 
-    private void SpawnRandomSkeleton()
+
+    private void SkeletonSpawnMagic() //AnimatonEvent
     {
         for (int i = 0; i < spawnSkeleton.Length; i++)
         {
@@ -66,10 +67,14 @@ public class BossController : MonoBehaviour
         }
     }
 
+    private void SkeletonSpawnMagicAnimationEvent()
+    {
+        anim.SetTrigger("SkeletonSpawnMagic");
+    }
+
+
     void RedMagic() //AnimationEvent
     {
-        anim.SetTrigger("RedMagic");
-
         skillArea = new Vector3(
         Random.Range(skillAreaCol.bounds.min.x, skillAreaCol.bounds.max.x),
         Random.Range(skillAreaCol.bounds.min.y, skillAreaCol.bounds.max.y),
@@ -81,10 +86,14 @@ public class BossController : MonoBehaviour
 
     }
 
+    void RedMagicAnimationEvent()
+    {
+        anim.SetTrigger("RedMagic");
+    }
+
+
     void WhiteMagic() //AnimationEvent
     {
-        anim.SetTrigger("WhiteMagic");
-
         skillArea = new Vector3(
         Random.Range(skillAreaCol.bounds.min.x, skillAreaCol.bounds.max.x),
         Random.Range(skillAreaCol.bounds.min.y, skillAreaCol.bounds.max.y),
@@ -94,17 +103,24 @@ public class BossController : MonoBehaviour
         GameObject whiteMagicClone = Instantiate(WhiteMagicParticle, skillArea, Quaternion.identity, skillAreaCol.transform);
         Destroy(whiteMagicClone, 5f);
     }
+    void WhiteMagicAnimationEvent()
+    {
+        anim.SetTrigger("WhiteMagic");
+    }
+
+
 
     void SlashMagic() //AnimationEvent
     {
-        anim.SetTrigger("SlashMagic");
-
-
         slashMagicClone = Instantiate(SlashMagicParticle, new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z), transform.rotation, skillAreaCol.transform);
-        slashMagicClone.transform.rotation = Quaternion.Euler(0, Random.Range(0,180), 0);
+        slashMagicClone.transform.rotation = Quaternion.Euler(0, Random.Range(45, 135), 0);
         Destroy(slashMagicClone, 2f);
     }
 
+    void SlashMagicAnimationEvent()
+    {
+        anim.SetTrigger("SlashMagic");
+    }
 }
 
 

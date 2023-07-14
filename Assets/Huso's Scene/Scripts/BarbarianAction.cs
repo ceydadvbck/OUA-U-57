@@ -52,15 +52,18 @@ public class BarbarianAction : NetworkBehaviour
     float groundAttackTime;
     [SerializeField] private GameObject groundAttackParticle;
 
+    [Header("UIManager")]
+    public Image classicCoolDownFill;
+    public Image groundCoolDownFill;
+    public Image throwCoolDownFill;
+
+
     bool axeThrow = false;
-
     bool axeReturn = false;
-
     bool axeInTheAir = false;
     bool axeGroundAttack = false;
     bool axeHolded = true;
     bool classicAttack = false;
-
     public bool isCharacterActive;
    
 
@@ -87,7 +90,7 @@ public class BarbarianAction : NetworkBehaviour
             if (Time.time > classicAttackTime)
             {
                 anim.SetBool("AxeClassicAttack", true);
-                StartCooldown(uiManager.classicCoolDownFill, classicAttackCoolDown);
+                StartCooldown(classicCoolDownFill, classicAttackCoolDown);
                 StartCoroutine(ClassicAttackControl());
                 classicAttack = true;
 
@@ -103,7 +106,7 @@ public class BarbarianAction : NetworkBehaviour
             {
                
                 anim.SetBool("AxeGroundAttack", true);
-                StartCooldown(uiManager.groundCoolDownFill, groundAttackCoolDown);
+                StartCooldown(groundCoolDownFill, groundAttackCoolDown);
                 axeGroundAttack = true;
                 bodyAim.weight = 0f;
 
@@ -133,7 +136,7 @@ public class BarbarianAction : NetworkBehaviour
             {
                 if (Time.time > throwAttackTime)
                 {
-                    StartCooldown(uiManager.throwCoolDownFill, throwAttackCoolDown);
+                    StartCooldown(throwCoolDownFill, throwAttackCoolDown);
                     anim.SetBool("AxeThrow", true);
                     anim.SetBool("AxeHolded", false);
 
@@ -351,12 +354,17 @@ public class BarbarianAction : NetworkBehaviour
     private IEnumerator DoCooldown(Image cooldownImage, float cooldownDuration)
     {
         float currentCooldown = cooldownDuration;
+        float startTime = Time.time;
+
         while (currentCooldown > 0)
         {
-            currentCooldown -= Time.deltaTime;
+            float elapsedTime = Time.time - startTime; 
+            currentCooldown = cooldownDuration - elapsedTime; 
+
             cooldownImage.fillAmount = currentCooldown / cooldownDuration;
             yield return null;
         }
+
         cooldownImage.fillAmount = 0f;
     }
 

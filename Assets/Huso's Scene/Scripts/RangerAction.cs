@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using Mirror;
 using System.Collections;
+using UnityEngine.UI;
 
 public class RangerAction : NetworkBehaviour
 {
@@ -40,7 +41,7 @@ public class RangerAction : NetworkBehaviour
     [SerializeField] private MultiRotationConstraint handRot;
     [SerializeField] private TwoBoneIKConstraint rightHand;
     [SerializeField] private TwoBoneIKConstraint leftHand;
-   
+
     [Space(10)]
 
     [Header("Aim")]
@@ -51,12 +52,18 @@ public class RangerAction : NetworkBehaviour
     private Vector3 initialOffset;
     private Vector3 targetOffset;
     private float transitionTimer;
-    [SyncVar(hook = nameof(OnWeightChanged))]
-    private float syncWeight;
+
+    [Header("UIManager")]
+    public Image classicArrowCoolDownFill;
+    public Image iceArrowCoolDownFill;
+    public Image trippleArrowCoolDownFill;
 
 
     [SerializeField] private bool classicArrowShoot;
     [SerializeField] private bool tripleArrowShoot;
+
+
+   
 
     public void Start()
     {
@@ -76,18 +83,13 @@ public class RangerAction : NetworkBehaviour
 
         if (!hasAuthority) return;
 
-        CmdRangerBodyAimRegulation(lookAt.transform.position,targetOffset);
-
+        CmdRangerBodyAimRegulation(lookAt.transform.position, targetOffset);
 
         if (Input.GetMouseButtonDown(1))
         {
             if (!rangerAiming)
             {
-                RangerAim(1f);
-            }
-            else
-            {
-                StopRangerAim();
+                RangerAim(bodyAim.weight);
             }
         }
         if (Input.GetMouseButtonUp(1))
@@ -106,6 +108,7 @@ public class RangerAction : NetworkBehaviour
                 if (Time.time > classicAttackTime)
                 {
                     animator.SetBool("ArrowAimShoot", true);
+                    StartCooldown(classicArrowCoolDownFill, classicAttackCoolDown);
 
                     tripleArrowShoot = false;
                     classicArrowShoot = true;
@@ -120,6 +123,8 @@ public class RangerAction : NetworkBehaviour
                 if (Time.time > iceAttackTime)
                 {
                     animator.SetBool("ArrowAimShoot", true);
+                    StartCooldown(iceArrowCoolDownFill,  iceAttackCoolDown);
+
                     tripleArrowShoot = false;
                     classicArrowShoot = false;
                     iceAttackTime = 0f;
@@ -133,6 +138,7 @@ public class RangerAction : NetworkBehaviour
                 if (Time.time > tripleAttackTime)
                 {
                     animator.SetBool("ArrowAimShoot", true);
+                    StartCooldown(trippleArrowCoolDownFill, tripleAttackCoolDown);
 
                     tripleArrowShoot = true;
                     classicArrowShoot = false;
@@ -162,9 +168,6 @@ public class RangerAction : NetworkBehaviour
 
         }
     }
-
-
- 
 
     #region BODY REGULATÝON
 
@@ -203,20 +206,15 @@ public class RangerAction : NetworkBehaviour
     #endregion
 
     #region RANGER AÝM
-    private void StopRangerAim()
-    {
-        CmdRangerAim(0f);
-    }
     private void RangerAim(float aimWeight)
     {
+        aimWeight = 1f;
         SetAimLocal(aimWeight);
         CmdRangerAim(aimWeight);
     }
 
     void SetAimLocal(float value)
     {
-        // set sync var because this function is called on owner, server and client
-        syncWeight = value;
 
         if (bodyAim != null)
         {
@@ -234,18 +232,15 @@ public class RangerAction : NetworkBehaviour
     [Command]
     private void CmdRangerAim(float weight)
     {
-        // SetAimLocal will set syncvar
-        SetAimLocal(weight);
+        RpcSetAimLocal(weight); // SetAimLocal fonksiyonunu tüm client'lara senkronize etmek için Rpc kullanýlýyor
     }
 
-    private void OnWeightChanged(float oldValue, float newValue)
+    [ClientRpc]
+    private void RpcSetAimLocal(float weight)
     {
-        // dont run on owner, they set it themselves 
-        if (!isLocalPlayer)
-        {
-            SetAimLocal(newValue);
-        }
+        SetAimLocal(weight); // SetAimLocal fonksiyonu client'lar üzerinde çaðrýlýyor
     }
+
     [Command]
     public void CmdRangerAimNot()
     {
@@ -264,13 +259,13 @@ public class RangerAction : NetworkBehaviour
 
     public void RangerArrowAttack() //AnimationEvent
     {
-        CmdRangerArrowAttack(classicArrowShoot,tripleArrowShoot);
+        CmdRangerArrowAttack(classicArrowShoot, tripleArrowShoot);
     }
 
     [Command]
     public void CmdRangerArrowAttack(bool isClassicArrowShoot, bool isTripleArrowShoot)
     {
-        RpcRangerArrowAttack(isClassicArrowShoot,isTripleArrowShoot);
+        RpcRangerArrowAttack(isClassicArrowShoot, isTripleArrowShoot);
     }
 
     [ClientRpc]
@@ -343,6 +338,28 @@ public class RangerAction : NetworkBehaviour
         arrowRb2.AddForce(arrowSpawnPoint[2].transform.forward * arrowForce, ForceMode.Impulse);
     }
 
+
+    #endregion
+
+    #region COOLDOWN SYSTEM
+
+    public void StartCooldown(Image cooldownImage, float cooldownDuration)
+    {
+        StartCoroutine(DoCooldown(cooldownImage, cooldownDuration));
+    }
+
+
+    private IEnumerator DoCooldown(Image cooldownImage, float cooldownDuration)
+    {
+        float currentCooldown = cooldownDuration;
+        while (currentCooldown > 0)
+        {
+            currentCooldown -= Time.deltaTime;
+            cooldownImage.fillAmount = currentCooldown / cooldownDuration;
+            yield return null;
+        }
+        cooldownImage.fillAmount = 0f;
+    }
 
     #endregion
 

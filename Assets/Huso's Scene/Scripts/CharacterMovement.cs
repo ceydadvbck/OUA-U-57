@@ -31,21 +31,62 @@ public class CharacterMovement : NetworkBehaviour
 
     [SerializeField] private Transform mainCamera;
 
+
+
+    [SyncVar(hook = nameof(OnTransformChange))]
+    private Vector3 syncPosition;
+
+    [SyncVar(hook = nameof(OnTransformChange))]
+    private Quaternion syncRotation;
+
+    [SerializeField] private float lerpRate = 15f;
+
+    private Transform characterTransform;
+
+
     public void Start()
     {
+        characterTransform = transform;
+
         if (!isOwned) return;
         characterController = GetComponent<CharacterController>();
         animationState = GetComponent<AnimationStateController>();
         anim = GetComponent<NetworkAnimator>();
 
-       
+
+        if (isOwned)
+        {
+            // Yerel oyuncunun transformunu güncelle
+            syncPosition = characterTransform.position;
+            syncRotation = characterTransform.rotation;
+        }
+        else
+        {
+            // Uzak oyuncularýn transformunu düzgün bir þekilde güncelle
+            characterTransform.position = Vector3.Lerp(characterTransform.position, syncPosition, Time.deltaTime * lerpRate);
+            characterTransform.rotation = Quaternion.Lerp(characterTransform.rotation, syncRotation, Time.deltaTime * lerpRate);
+        }
+
     }
+
+    private void OnTransformChange(Vector3 oldValue, Vector3 newValue)
+    {
+        // SyncVar tarafýndan otomatik olarak tetiklenen fonksiyon
+        syncPosition = newValue;
+    }
+
+    private void OnTransformChange(Quaternion oldValue, Quaternion newValue)
+    {
+        // SyncVar tarafýndan otomatik olarak tetiklenen fonksiyon
+        syncRotation = newValue;
+    }
+
     public override void OnStartAuthority()
     {
         base.OnStartAuthority();
         GameObject.FindGameObjectWithTag("PlayerFollowCamera").GetComponent<CinemachineFreeLook>().Follow = transform.GetChild(0).transform;
         GameObject.FindGameObjectWithTag("PlayerFollowCamera").GetComponent<CinemachineFreeLook>().LookAt = transform.GetChild(0).transform;
-        Debug.Log("xd");
+       
     }
 
 
@@ -105,6 +146,7 @@ public class CharacterMovement : NetworkBehaviour
 
     }
 
+    #region Jump
 
     private void JumpControl()
     {
@@ -127,7 +169,7 @@ public class CharacterMovement : NetworkBehaviour
         jumpPressed = false;
     }
     public void JumpForce() => velocity.y += jumpSpeed;
+    #endregion
 
-
-  
 }
+

@@ -56,7 +56,7 @@ public class CharacterSelect : NetworkBehaviour
         }
     }
 
-    [Command(requiresAuthority = false)]
+   [Command(requiresAuthority = false)]
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
         GameObject characterInstance = Instantiate(characters[characterIndex].CharacterPrefab);

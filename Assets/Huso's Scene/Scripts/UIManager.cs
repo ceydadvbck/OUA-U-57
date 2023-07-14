@@ -9,9 +9,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private BarbarianAction barbarian;
     [SerializeField] private RangerAction ranger;
-    public Image classicCoolDownFill;
-    public Image groundCoolDownFill;
-    public Image throwCoolDownFill;
+
+
+
 
     public void Awake()
     {
