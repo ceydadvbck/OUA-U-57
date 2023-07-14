@@ -616,8 +616,8 @@ MonoBehaviour:
   - {fileID: 6619667998020199247}
   - {fileID: 6682053178031886542}
   classicAttackCoolDown: 1
-  tripleAttackCoolDown: 1
-  iceAttackCoolDown: 1
+  tripleAttackCoolDown: 10
+  iceAttackCoolDown: 5
   arrowSpawnPoint:
   - {fileID: 8861136565309096078}
   - {fileID: 2408493334525249493}

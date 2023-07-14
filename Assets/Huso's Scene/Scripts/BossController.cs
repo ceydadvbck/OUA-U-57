@@ -75,13 +75,18 @@ public class BossController : MonoBehaviour
 
     void RedMagic() //AnimationEvent
     {
-        skillArea = new Vector3(
-        Random.Range(skillAreaCol.bounds.min.x, skillAreaCol.bounds.max.x),
-        Random.Range(skillAreaCol.bounds.min.y, skillAreaCol.bounds.max.y),
-        Random.Range(skillAreaCol.bounds.min.z, skillAreaCol.bounds.max.z));
+        Vector3 capsuleCenter = skillAreaCol.bounds.center;
 
-        skillArea.y = 0f;
-        GameObject redMagicClone = Instantiate(RedMagicParticle, skillArea, Quaternion.identity, skillAreaCol.transform);
+        Vector3 randomOffset = new Vector3(
+            Random.Range(-skillAreaCol.bounds.extents.x, skillAreaCol.bounds.extents.x),
+            Random.Range(0, 0),
+            Random.Range(-skillAreaCol.bounds.extents.z, skillAreaCol.bounds.extents.z)
+        );
+
+        Vector3 skillPosition = capsuleCenter + randomOffset;
+        
+        GameObject redMagicClone = Instantiate(RedMagicParticle, skillPosition, Quaternion.identity, skillAreaCol.transform);
+        redMagicClone.transform.position = new Vector3(redMagicClone.transform.position.x, 0f, redMagicClone.transform.position.z);
         Destroy(redMagicClone, 5f);
 
     }
@@ -94,13 +99,18 @@ public class BossController : MonoBehaviour
 
     void WhiteMagic() //AnimationEvent
     {
-        skillArea = new Vector3(
-        Random.Range(skillAreaCol.bounds.min.x, skillAreaCol.bounds.max.x),
-        Random.Range(skillAreaCol.bounds.min.y, skillAreaCol.bounds.max.y),
-        Random.Range(skillAreaCol.bounds.min.z, skillAreaCol.bounds.max.z));
+        Vector3 capsuleCenter = skillAreaCol.bounds.center;
 
-        skillArea.y = 0f;
-        GameObject whiteMagicClone = Instantiate(WhiteMagicParticle, skillArea, Quaternion.identity, skillAreaCol.transform);
+        Vector3 randomOffset = new Vector3(
+            Random.Range(-skillAreaCol.bounds.extents.x, skillAreaCol.bounds.extents.x),
+            Random.Range(-skillAreaCol.bounds.extents.y, skillAreaCol.bounds.extents.y),
+            Random.Range(-skillAreaCol.bounds.extents.z, skillAreaCol.bounds.extents.z)
+        );
+
+        Vector3 skillPosition = capsuleCenter + randomOffset;
+
+        GameObject whiteMagicClone = Instantiate(WhiteMagicParticle, skillPosition, Quaternion.identity, skillAreaCol.transform);
+        whiteMagicClone.transform.position = new Vector3(whiteMagicClone.transform.position.x, 0f, whiteMagicClone.transform.position.z);
         Destroy(whiteMagicClone, 5f);
     }
     void WhiteMagicAnimationEvent()
