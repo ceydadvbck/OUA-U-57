@@ -1,25 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class HammerMove : MonoBehaviour
 {
+    Animator anim;
 
-    public float speed = 2.0f;
-    private bool isRotatingDown = true;
+    [SerializeField] AudioClip acHammer;
 
-    private void Update()
+    public void Start()
     {
-        float rotationDelta = speed * Time.deltaTime;
-        if (isRotatingDown)
+        anim = GetComponent<Animator>();
+        if (gameObject.transform.name =="Hammer1")
         {
-            transform.Rotate(Vector3.down, rotationDelta);
-            if (transform.rotation.x <= -36.0f)
-            {
-                isRotatingDown = false;
-            }
+            anim.Play("HammerPush1");
         }
-
+        else
+        {
+            anim.Play("HammerPush2");
+        }
+        
     }
 
+    private void SoundHammer()
+    {
+        GetComponent<AudioSource>().PlayOneShot(acHammer);
+    }
 }
+

@@ -13,5 +13,6 @@ public class Sound
     [Range(0, 1)] public float volume = 1f;
     [Range(0, 1)] public float pitch = 1f;
     public bool loop;
+    [Range(0, 1)] public float spetialBlend = 0f;
 
 }

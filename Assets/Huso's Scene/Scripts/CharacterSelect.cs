@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
+
 public class CharacterSelect : NetworkBehaviour
 {
     [SerializeField] private GameObject characterSelectDisplay = default;
     [SerializeField] private CharacterScriptableObject[] characters = default;
 
-    private int currentCharacterIndex = 0;
+    public int currentCharacterIndex = 0;
     private List<GameObject> characterInstances = new List<GameObject>();
     private bool[] characterSelected;
 
     GameObject[] skeletonObjects;
     List<EnemyController> enemyControllers = new List<EnemyController>();
+
     public void Start()
     {
+
         skeletonObjects = GameObject.FindGameObjectsWithTag("Skeleton");
 
         foreach (GameObject skeletonObject in skeletonObjects)
@@ -37,6 +40,7 @@ public class CharacterSelect : NetworkBehaviour
 
     public void BarbarianButton()
     {
+        currentCharacterIndex = 0;
         if (!characterSelected[0])
         {
             CmdSelect(0);
@@ -47,6 +51,7 @@ public class CharacterSelect : NetworkBehaviour
     }
     public void RangerButton()
     {
+        currentCharacterIndex = 1;
         if (!characterSelected[1])
         {
             CmdSelect(1);
@@ -56,7 +61,7 @@ public class CharacterSelect : NetworkBehaviour
         }
     }
 
-   [Command(requiresAuthority = false)]
+    [Command(requiresAuthority = false)]
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
         GameObject characterInstance = Instantiate(characters[characterIndex].CharacterPrefab);

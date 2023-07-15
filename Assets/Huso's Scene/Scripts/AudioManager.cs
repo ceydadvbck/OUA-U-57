@@ -24,26 +24,30 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
+       
         foreach (var sound in sounds)
         {
-            sound.source = gameObject.AddComponent<AudioSource>();
-            sound.source.clip = sound.clip;
-            sound.source.volume = sound.volume;
-            sound.source.pitch = sound.pitch;
-            sound.source.playOnAwake = false;
-            sound.source.loop = sound.loop;
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.clip = sound.clip;
+            source.volume = sound.volume;
+            source.pitch = sound.pitch;
+            source.playOnAwake = false;
+            source.loop = sound.loop;
+            source.spatialBlend = sound.spetialBlend;
+            sound.source = source;
         }
+        Instance.Play("SoundTrack");
 
-        Instance.Play("Atmo");
-        Instance.Play("Rain");
-        Instance.Play("Lightning");
     }
 
     public void Play(string audioName)
     {
         Sound s = Array.Find(sounds, sound => sound.audioName == audioName);
 
-        s.source.Play();
+        if (s != null && s.source != null) s.source.Play();
+
+        else Debug.LogWarning("Ses bulunamadý veya AudioSource null.");
+
     }
 
     public void Stop(string audioName)
