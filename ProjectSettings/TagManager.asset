@@ -25,6 +25,10 @@ TagManager:
   - Trap
   - HealthCol
   - AudioManager
+  - spawn1
+  - spawn2
+  - spawn3
+  - spawn4
   layers:
   - Default
   - TransparentFX

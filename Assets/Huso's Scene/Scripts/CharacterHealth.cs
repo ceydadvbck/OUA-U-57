@@ -1,78 +1,105 @@
-/*using UnityEngine;
-
-public class CharacterHealth : MonoBehaviour
-{
-    public float health;
-    bool characterDead;
-
-    void DamageToCharacter(float damage)
-    {
-        health -= damage;
-
-        if (health <= 0f)
-        {
-            health = 0f;
-            characterDead = true;
-        }
-        else characterDead = false;
-    }
-
-  
-} */
 
 using UnityEngine;
+using Mirror;
+using System.Collections.Generic;
 
-/* Contains all the stats for a character. */
-
-public class CharacterHealth : MonoBehaviour
+public class CharacterHealth : NetworkBehaviour
 {
 
-	public Stat maxHealth;          // Maximum amount of health
-	public int currentHealth { get; protected set; }    // Current amount of health
+    public Stat maxHealth;          // Maximum amount of health
+    public int currentHealth { get; protected set; }    // Current amount of health
 
-	public Stat damage;
-	public Stat armor;
+    public Stat damage;
+    public Stat armor;
 
-	public event System.Action OnHealthReachedZero;
+    int i=0;
+    public event System.Action OnHealthReachedZero;
+    [SerializeField] List<GameObject> playerSpawnPoint = new List<GameObject>();
 
-	public virtual void Awake()
-	{
-		currentHealth = maxHealth.GetValue();
-	}
+    void Start()
+    {
+      
+        GameObject[] spawn1 = GameObject.FindGameObjectsWithTag("spawn1"); //0
+        GameObject[] spawn2 = GameObject.FindGameObjectsWithTag("spawn2"); //1
+        GameObject[] spawn3 = GameObject.FindGameObjectsWithTag("spawn3"); //2
+        GameObject[] spawn4 = GameObject.FindGameObjectsWithTag("spawn4"); //3
+        playerSpawnPoint.AddRange(spawn1);
+        playerSpawnPoint.AddRange(spawn2);
+        playerSpawnPoint.AddRange(spawn3);
+        playerSpawnPoint.AddRange(spawn4);
+    }
 
-	// Start with max HP.
-	public virtual void Start()
-	{
 
-	}
+    public virtual void Awake()
+    {
+        currentHealth = maxHealth.GetValue();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!hasAuthority)
+            return;
 
-	// Damage the character
-	public void TakeDamage(int damage)
-	{
-		// Subtract the armor value - Make sure damage doesn't go below 0.
-		damage -= armor.GetValue();
-		damage = Mathf.Clamp(damage, 0, int.MaxValue);
+        if (other.gameObject.transform.CompareTag("Trap"))
+        {
+            CmdRespawnPlayer();
+        }
 
-		// Subtract damage from health
-		currentHealth -= damage;
-		Debug.Log(transform.name + " takes " + damage + " damage.");
+        if (other.gameObject.transform.CompareTag("spawn1"))
+        {
+            i = 0;
+        }
+        if (other.gameObject.transform.CompareTag("spawn2"))
+        {
+            i = 1;
+        }
+        if (other.gameObject.transform.CompareTag("spawn3"))
+        {
+            i = 2;
+        }
+        if (other.gameObject.transform.CompareTag("spawn4"))
+        {
+            i = 3;
+        }
+    }
+    [Command]
+    private void CmdRespawnPlayer()
+    {
+        RpcRespawnPlayer();
+    }
 
-		// If we hit 0. Die.
-		if (currentHealth <= 0)
-		{
-			if (OnHealthReachedZero != null)
-			{
-				OnHealthReachedZero();
-			}
-		}
-	}
+    [ClientRpc]
+    private void RpcRespawnPlayer()
+    {
+        gameObject.transform.position = playerSpawnPoint[i].transform.position;
+    }
 
-	// Heal the character.
-	public void Heal(int amount)
-	{
-		currentHealth += amount;
-		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth.GetValue());
-	}
+    // Damage the character
+    public void TakeDamage(int damage)
+    {
+        // Subtract the armor value - Make sure damage doesn't go below 0.
+        damage -= armor.GetValue();
+        damage = Mathf.Clamp(damage, 0, int.MaxValue);
+
+        // Subtract damage from health
+        currentHealth -= damage;
+        Debug.Log(transform.name + " takes " + damage + " damage.");
+
+        // If we hit 0. Die.
+        if (currentHealth <= 0)
+        {
+            if (OnHealthReachedZero != null)
+            {
+                OnHealthReachedZero();
+            }
+        }
+    }
+
+    // Heal the character.
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth.GetValue());
+    }
 
 
 
