@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8363236438601605804}
   - component: {fileID: 6790067197539403603}
   - component: {fileID: 8881899274204246866}
+  - component: {fileID: -410057549088309727}
   m_Layer: 0
   m_Name: GOLD
   m_TagString: Untagged
@@ -139,3 +140,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 6e5a03b779ed18a4aaa4ff08088782ad, type: 2}
+--- !u!61 &-410057549088309727
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358116749962445756}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.68, y: 0.71}
+    newSize: {x: 0.68, y: 0.71}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.68, y: 0.71}
+  m_EdgeRadius: 0

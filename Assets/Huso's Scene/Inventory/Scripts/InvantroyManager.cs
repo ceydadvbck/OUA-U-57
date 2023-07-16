@@ -6,17 +6,18 @@ using UnityEngine.UI;
 
 public class InvantroyManager : MonoBehaviour
 {
-   public static InvantroyManager Instance;
+    public static InvantroyManager Instance;
     public List<Item> Items = new List<Item>();
 
     public Transform ItemContent;
     public GameObject InventoryItem;
+    public GameObject ItemExplanation;
 
     public Toggle EnableRemove;
 
     public InventroyItemController[] InventroyItems;
-    
-    
+
+
     private void Awake()
     {
         Instance = this;
@@ -24,7 +25,7 @@ public class InvantroyManager : MonoBehaviour
 
     public void Add(Item item)
     {
-        Items.Add(item); 
+        Items.Add(item);
     }
 
     public void Revmove(Item item)
@@ -32,7 +33,7 @@ public class InvantroyManager : MonoBehaviour
         Items.Remove(item);
     }
 
-    public void ListItems()     
+    public void ListItems()
     {
         foreach (Transform item in ItemContent)
         {
@@ -46,17 +47,17 @@ public class InvantroyManager : MonoBehaviour
             var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
-            var itemExplanation = obj.transform.Find("ItemExplanation").GetComponent<Text>();
+            //var itemExplanation = obj.transform.Find("ItemExplanation").GetComponent<Text>();
             var ItemButton = obj.transform.Find("ItemButton").GetComponent<Button>();
             itemName.text = item.itemName;
-            itemExplanation.text = item.itemExplanation;
+
             itemIcon.sprite = item.icon;
-           ;
+            ;
             if (EnableRemove.isOn)
                 removeButton.gameObject.SetActive(true);
 
         }
-      
+
         SetInventroyItems();
     }
 
@@ -90,13 +91,10 @@ public class InvantroyManager : MonoBehaviour
 
     public void ItemExplanationButton()
     {
-      
-            foreach (Transform item in ItemContent)
-            {
-                item.Find("ItemExplanation").gameObject.SetActive(true);
-            }
-        
-       
+
+        Debug.Log("button");
+        GameObject.Find("ItemExplanation").gameObject.SetActive(true);
+        ItemExplanation.GetComponent<Text>().text = GetComponent<Item>().itemExplanation.ToString();
     }
 
 }
