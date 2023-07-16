@@ -1,19 +1,24 @@
-
 using UnityEngine;
 using UnityEngine.AI;
 using Mirror;
 public class EnemyController : NetworkBehaviour
-{
+{   
     [SyncVar]
     public float lookRadius = 10f;  // Detection range for player
-
+    Animator animator;
     UnityEngine.AI.NavMeshAgent agent; // Reference to the NavMeshAgent
     CharacterCombat combat;
-
+        
 
     [HideInInspector] public GameObject[] target;
+
+    bool isRunning;
+    bool isAttacking;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
+        
 
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
@@ -38,8 +43,13 @@ public class EnemyController : NetworkBehaviour
 
                     if (distance < closestDistance)
                     {
+                       
+
                         closestTarget = currentTarget;
                         closestDistance = distance;
+                        
+                        animator.Play("Zombie Run");
+
                     }
                 }
             }
@@ -52,6 +62,8 @@ public class EnemyController : NetworkBehaviour
                 {
 
                     agent.SetDestination(closestTarget.transform.position);
+
+                    
 
                     if (distanceToClosest <= agent.stoppingDistance)
                     {
@@ -78,7 +90,7 @@ public class EnemyController : NetworkBehaviour
     [Command]
     void SyncEnemyPositionAndRotation()
     {
-        // Pozisyon ve rotasyon bilgilerini di�er oyunculara g�ndermek i�in ClientRpc kullan
+        // Pozisyon ve rotasyon bilgilerini diger oyunculara gondermek icin ClientRpc kullan
         RpcSyncEnemyPositionAndRotation(transform.position, transform.rotation);
     }
 
