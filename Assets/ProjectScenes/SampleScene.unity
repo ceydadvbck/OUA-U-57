@@ -2353,7 +2353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238311300}
   m_Layer: 0
-  m_Name: ChackPoints
+  m_Name: CheckPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14888,7 +14888,7 @@ GameObject:
   - component: {fileID: 1110216855}
   - component: {fileID: 1110216856}
   m_Layer: 0
-  m_Name: SpawnPoint3 (1)
+  m_Name: SpawnPoint4
   m_TagString: spawn4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

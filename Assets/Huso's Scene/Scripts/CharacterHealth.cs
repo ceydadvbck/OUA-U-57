@@ -14,22 +14,19 @@ public class CharacterHealth : NetworkBehaviour
 
     int i=0;
     public event System.Action OnHealthReachedZero;
-    List<GameObject> playerSpawnPoint = new List<GameObject>();
+    [SerializeField] List<GameObject> playerSpawnPoint = new List<GameObject>();
 
     void Start()
     {
-        // "x" tag'ine sahip olan tüm nesneleri bulma
-        GameObject[] objectsX = GameObject.FindGameObjectsWithTag("spawn1");
-        // "y" tag'ine sahip olan tüm nesneleri bulma
-        GameObject[] objectsY = GameObject.FindGameObjectsWithTag("spawn2");
-        // "z" tag'ine sahip olan tüm nesneleri bulma
-        GameObject[] objectsZ = GameObject.FindGameObjectsWithTag("spawn3");
-
-        GameObject[] objectsA = GameObject.FindGameObjectsWithTag("spawn4");
-        playerSpawnPoint.AddRange(objectsX);
-        playerSpawnPoint.AddRange(objectsY);
-        playerSpawnPoint.AddRange(objectsZ);
-        playerSpawnPoint.AddRange(objectsA);
+      
+        GameObject[] spawn1 = GameObject.FindGameObjectsWithTag("spawn1"); //0
+        GameObject[] spawn2 = GameObject.FindGameObjectsWithTag("spawn2"); //1
+        GameObject[] spawn3 = GameObject.FindGameObjectsWithTag("spawn3"); //2
+        GameObject[] spawn4 = GameObject.FindGameObjectsWithTag("spawn4"); //3
+        playerSpawnPoint.AddRange(spawn1);
+        playerSpawnPoint.AddRange(spawn2);
+        playerSpawnPoint.AddRange(spawn3);
+        playerSpawnPoint.AddRange(spawn4);
     }
 
 
@@ -49,22 +46,18 @@ public class CharacterHealth : NetworkBehaviour
 
         if (other.gameObject.transform.CompareTag("spawn1"))
         {
-            playerSpawnPoint[0] = other.gameObject;
             i = 0;
         }
         if (other.gameObject.transform.CompareTag("spawn2"))
         {
-            playerSpawnPoint[1] = other.gameObject;
             i = 1;
         }
         if (other.gameObject.transform.CompareTag("spawn3"))
         {
-            playerSpawnPoint[2] = other.gameObject;
             i = 2;
         }
         if (other.gameObject.transform.CompareTag("spawn4"))
         {
-            playerSpawnPoint[3] = other.gameObject;
             i = 3;
         }
     }

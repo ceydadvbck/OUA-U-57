@@ -10,9 +10,14 @@ public class DoorSystem : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(RotateDoor());
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(RotateDoor());
+        }
+    }
     private IEnumerator RotateDoor()
     {
         Quaternion startRotation = transform.rotation;
