@@ -124,3 +124,28 @@ https://github.com/ceydadvbck/OUA-U-57/assets/109868640/79b793a6-a2b6-4ea0-aca3-
   * Projede hızlanılması gerektiği paylaşıldı.
 - **Product Backlog URL** : https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit#gid=479934176
 ---
+## SPRINT 3
+- **Sprint Notları**: User story Product Backlog sheeti içerisinde verilmiştir. 
+- **Tahmin Edilen Tamamlanacak Puan**: 195 puan
+- **Tahmin mantığı:** Toplamda proje boyunca tamamlanması gereken 395 puanlık backlog bulunmaktadır. Görevler için harcanan emek ve ayrılan süre göz önüne alınarak puanlama yapılmıştır. Total puan düşünüldüğünde projenin tamamlanması için 3. sprintte 195 puanlık görevin tamamlanması gerektiğine karar verilmiştir.
+- **Daily Scrum**: Daily Scrum toplantıları zamansal sebeplerden ötürü whatsapp ve discord üzerinden alınmıştır. https://docs.google.com/document/d/1AwO_CUPL4jbDqtudtQ0q_DEWDpoFPwqewsmYH5w2_fM/edit?usp=sharing
+
+- **Sprint board update:** Sprint board screenshotları: <img width="1301" alt="Ekran Resmi 2023-07-16 19 08 08" src="https://github.com/ceydadvbck/OUA-U-57/assets/109868640/0c9eacba-0a59-42a3-b348-3f8e7b22d15d">
+
+- **Ürün Durumu**:
+  
+![image-4](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/08c24b02-9ea5-4369-9cfb-1989e6df5859)
+![image-3](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/c449cfa0-784c-4e4a-ba01-131c9bc6a4cf)
+![image6](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/2c22152b-928c-4df1-9419-e5d2e18a3c74)
+![image7](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/ea7b8128-a7e5-431e-a52c-41df3dbe1719)
+![image8](https://github.com/ceydadvbck/OUA-U-57/assets/109868640/aba537bd-d179-4290-90a9-7ff5566afe42)
+- Ekip her pazartesi saat 12.00'de toplantı almıştır. Projen teslimine bir hafta kala günlük toplantı almıştır.
+  * **Toplantı notları:** https://docs.google.com/document/d/1fO8fNA6DLUU7AfLdYoHaSmdL_9ZhJyvYezOOUVqIJgc/edit?usp=sharing
+- Oyun tasarımı için Miro üzerinden çalışılmıştır.
+  * **Miro:** https://miro.com/app/board/uXjVMCKJy3M=/?share_link_id=49540094155
+- **Sprint Review:** Aktarılan görevler ve bu sprint görevleri tamamlanmıştır. 
+- **Sprint Retrospective:**
+  * Toplantıların son hafta hergün yapılması gerektiğine değinilmiştir.
+- **Product Backlog URL** : https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit#gid=479934176
+---
+- # Kullanılan Assetler
