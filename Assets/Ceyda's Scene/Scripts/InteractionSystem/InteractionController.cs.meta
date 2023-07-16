@@ -3,7 +3,10 @@ guid: 38e493d1a5210c4418c4181ce2369325
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - interactionInputData: {fileID: 11400000, guid: e60b6a49c20370f4fadfbc1f57841ad8, type: 2}
+  - interactionData: {fileID: 11400000, guid: 4a1b144c662b65e4c819cf4eff3c9f2f, type: 2}
+  - uiPanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
