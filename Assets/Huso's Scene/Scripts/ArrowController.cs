@@ -18,8 +18,6 @@ public class ArrowController : MonoBehaviour
     [SerializeField] private GameObject iceCrackParticle;
     bool ice›mpactActive;
   
-
-
   
     public void Start()
     {
@@ -28,6 +26,15 @@ public class ArrowController : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            other.gameObject.transform.GetComponent<EnemyHealth>().Damage(25f);
+        }
+        if (other.gameObject.CompareTag("Golem"))
+        {
+            other.gameObject.transform.GetComponent<EnemyHealth>().Damage(50f);
+        }
+
         if (other.gameObject.CompareTag("ArrowTarget")) other.gameObject.GetComponent<FixedJoint>().breakForce = 0;
 
         if (other.gameObject.CompareTag("Skeleton") && gameObject.CompareTag("Arrow"))

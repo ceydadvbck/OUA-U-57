@@ -31,4 +31,13 @@ public class EnemyHealth : MonoBehaviour
         anim.SetTrigger("BossDeath");
         Destroy(gameObject, 1.3f);
     }
+
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.transform.CompareTag("GroundAttackDamageBox"))
+        {
+            Damage(50f);
+
+        }
+    }
 }

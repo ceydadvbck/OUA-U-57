@@ -234,6 +234,14 @@ public class BarbarianAction : NetworkBehaviour
                 SkeletonBody skeleton = hit.gameObject.GetComponent<SkeletonBody>();
                 skeleton.GetHit();
             }
+            if (hit.gameObject.transform.CompareTag("Boss"))
+            {
+                hit.gameObject.transform.GetComponent<EnemyHealth>().Damage(25f);
+            }
+            if (hit.gameObject.transform.CompareTag("Golem"))
+            {
+                hit.gameObject.transform.GetComponent<EnemyHealth>().Damage(50f);
+            }
 
         }
     }
