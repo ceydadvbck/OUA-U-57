@@ -1,45 +1,48 @@
-
 using UnityEngine;
 using UnityEngine.AI;
 using Mirror;
+using System.Collections.Generic;
+using System.Collections;
+
 public class EnemyController : NetworkBehaviour
-{
+{   
     [SyncVar]
     public float lookRadius = 10f;  // Detection range for player
-
+    Animator animator;
     UnityEngine.AI.NavMeshAgent agent; // Reference to the NavMeshAgent
-    CharacterCombat combat;
 
-
+    GameObject closestTarget = null;
     [HideInInspector] public GameObject[] target;
+
+    bool chase;
+
     void Start()
     {
-
+        chase = true;
+        animator = GetComponent<Animator>();
+        
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        combat = GetComponent<CharacterCombat>();
 
         target = GameObject.FindGameObjectsWithTag("Player");
+        agent.enabled = false;
     }
 
 
     void Update()
     {
-
         if (target != null && target.Length > 0)
         {
-            GameObject closestTarget = null;
-            float closestDistance = Mathf.Infinity;
-
             foreach (var currentTarget in target)
             {
                 if (currentTarget != null)
                 {
                     float distance = Vector3.Distance(currentTarget.transform.position, transform.position);
 
-                    if (distance < closestDistance)
+                    if (distance < lookRadius)
                     {
                         closestTarget = currentTarget;
-                        closestDistance = distance;
+
+                        animator.SetTrigger("GettingUp");
                     }
                 }
             }
@@ -50,23 +53,40 @@ public class EnemyController : NetworkBehaviour
 
                 if (distanceToClosest <= lookRadius)
                 {
-
-                    agent.SetDestination(closestTarget.transform.position);
-
                     if (distanceToClosest <= agent.stoppingDistance)
                     {
                         CharacterHealth targetStats = closestTarget.GetComponent<CharacterHealth>();
-                        if (targetStats != null)
+                        if (targetStats != null )
                         {
-                            // combat.Attack(targetStats);
+                            animator.SetBool("Attack", true);
+                            animator.SetBool("Chase", false);
+                           
                         }
 
                         FaceTarget();
                     }
+                    else if(!chase)
+                    {
+                        ChaseControl();
+                    }
+
                 }
             }
         }
     }
+
+    void ChaseControl()
+    {
+        agent.SetDestination(closestTarget.transform.position);
+       
+        animator.SetBool("Chase", true);
+        animator.SetBool("Attack", false);
+       
+        agent.enabled = true;
+        chase = false;
+    }
+
+
     void FixedUpdate()
     {
         if (isServer)
@@ -78,7 +98,7 @@ public class EnemyController : NetworkBehaviour
     [Command]
     void SyncEnemyPositionAndRotation()
     {
-        // Pozisyon ve rotasyon bilgilerini di�er oyunculara g�ndermek i�in ClientRpc kullan
+        // Pozisyon ve rotasyon bilgilerini diger oyunculara gondermek icin ClientRpc kullan
         RpcSyncEnemyPositionAndRotation(transform.position, transform.rotation);
     }
 
@@ -105,10 +125,7 @@ public class EnemyController : NetworkBehaviour
     [Server]
     void OnDrawGizmosSelected()
     {
-        if (!Application.isPlaying)
-        {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, lookRadius);
-        }
     }
 }

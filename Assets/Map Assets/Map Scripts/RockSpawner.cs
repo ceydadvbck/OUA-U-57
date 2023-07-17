@@ -25,5 +25,8 @@ public class RockSpawner : MonoBehaviour
     {
         GameObject fracturedObject = Instantiate(fractured, transform.position, transform.rotation); // Parçalanmýþ versiyonu oluþtur
         Destroy(fracturedObject, 4f); // 2 saniye sonra parçalanmýþ nesneyi yok et
-    } 
+
+        if (asteroid != null)
+            Destroy(asteroid, 0.5f);
+    }
 }
