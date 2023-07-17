@@ -47,7 +47,7 @@ public class ChestSystem : MonoBehaviour
     private void OpenChest()
     {
         // Kapaklarý yavaþça açmak için döndürecek Quaternion rotasyonunu oluþturun
-        Quaternion targetRotation = Quaternion.Euler(0f, openAngle, 0f) * initialRotation;
+        Quaternion targetRotation = Quaternion.Euler(-openAngle,0 , 0f) * initialRotation;
 
         // Quaternion rotasyonunu kullanarak kapaklarý yavaþça açýn
         StartCoroutine(RotateLid(targetRotation));

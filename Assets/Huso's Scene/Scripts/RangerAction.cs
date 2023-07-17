@@ -62,14 +62,16 @@ public class RangerAction : NetworkBehaviour
     [SerializeField] private bool classicArrowShoot;
     [SerializeField] private bool tripleArrowShoot;
 
+    AudioSource audiosource;
+    [SerializeField] AudioClip acBow;
+    [SerializeField] AudioClip acArrow;
 
-   
 
     public void Start()
     {
         aimLookAt = GameObject.FindGameObjectWithTag("AimLookAt");
         animator = GetComponent<Animator>();
-
+        audiosource = GetComponent<AudioSource>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
         initialOffset = bodyAim.data.offset;
@@ -90,6 +92,7 @@ public class RangerAction : NetworkBehaviour
             if (!rangerAiming)
             {
                 RangerAim(bodyAim.weight);
+                audiosource.PlayOneShot(acBow);
             }
         }
         if (Input.GetMouseButtonUp(1))
@@ -109,7 +112,7 @@ public class RangerAction : NetworkBehaviour
                 {
                     animator.SetBool("ArrowAimShoot", true);
                     StartCooldown(classicArrowCoolDownFill, classicAttackCoolDown);
-
+                    audiosource.PlayOneShot(acArrow);
                     tripleArrowShoot = false;
                     classicArrowShoot = true;
                     classicAttackTime = 0f;
@@ -124,7 +127,7 @@ public class RangerAction : NetworkBehaviour
                 {
                     animator.SetBool("ArrowAimShoot", true);
                     StartCooldown(iceArrowCoolDownFill,  iceAttackCoolDown);
-
+                    audiosource.PlayOneShot(acArrow);
                     tripleArrowShoot = false;
                     classicArrowShoot = false;
                     iceAttackTime = 0f;
@@ -139,7 +142,7 @@ public class RangerAction : NetworkBehaviour
                 {
                     animator.SetBool("ArrowAimShoot", true);
                     StartCooldown(trippleArrowCoolDownFill, tripleAttackCoolDown);
-
+                    audiosource.PlayOneShot(acArrow);
                     tripleArrowShoot = true;
                     classicArrowShoot = false;
                     tripleAttackTime = 0f;
