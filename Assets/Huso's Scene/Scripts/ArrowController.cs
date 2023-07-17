@@ -17,11 +17,18 @@ public class ArrowController : MonoBehaviour
     [SerializeField] private GameObject iceImpactParticle;
     [SerializeField] private GameObject iceCrackParticle;
     bool ice›mpactActive;
-  
-  
+
+
+    [Header("AUDIO")]
+    [SerializeField] AudioClip acFreeze;
+    [SerializeField] AudioClip acClassicImpact;
+    AudioSource audioSource;
+
+
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnCollisionEnter(Collision other)
@@ -47,6 +54,7 @@ public class ArrowController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground") && gameObject.CompareTag("TripleArrow"))
         {
             rb.isKinematic = true;
+            audioSource.PlayOneShot(acClassicImpact);
         }
 
         if (other.gameObject.CompareTag("Ground") && gameObject.CompareTag("IceArrow") && iceImpactParticle != null && !ice›mpactActive)
@@ -56,8 +64,10 @@ public class ArrowController : MonoBehaviour
 
             Vector3 contactPoint = other.GetContact(0).point;
             Instantiate(iceCrackParticle, contactPoint, Quaternion.identity);
-          
+
             Destroy(clone›ceImpact, 1.2f);
+
+            audioSource.PlayOneShot(acFreeze);
         }
 
         if (other.gameObject.CompareTag("Skeleton") && gameObject.CompareTag("IceArrow") && iceMaterial != null)
@@ -76,6 +86,7 @@ public class ArrowController : MonoBehaviour
                     hit.gameObject.transform.GetComponent<NavMeshAgent>().speed = 1f;
 
                     SkeletonBody skeletonBody = hit.gameObject.GetComponent<SkeletonBody>();
+                    skeletonBody.FreezeSound();
                     if (skeletonBody != null)
                     {
                         for (int i = 0; i < skeletonBody.transform.childCount; i++)
@@ -92,7 +103,11 @@ public class ArrowController : MonoBehaviour
             }
         }
 
-        else if (other.gameObject.CompareTag("Ground")) rb.isKinematic = true;
+        else if (other.gameObject.CompareTag("Ground") && gameObject.CompareTag("Arrow")) 
+        {
+            rb.isKinematic = true;
+            audioSource.PlayOneShot(acClassicImpact);
+        }
 
         Destroy(transform.parent.gameObject, 7f);
     }

@@ -4441,7 +4441,7 @@ MonoBehaviour:
   isCharacterActive: 0
   acAxeAttack: {fileID: 8300000, guid: 4bcfb05f65c1eeb48b98ebb0419943dc, type: 3}
   acAxeThrow: {fileID: 8300000, guid: 51330c903cd103b4cae6be57749a096f, type: 3}
-  acAxeGround: {fileID: 8300000, guid: 047f79f279c8ebb43b6e9884890b17be, type: 3}
+  acAxeGround: {fileID: 8300000, guid: 77b3776f67a0e64449c0e102a9a232e2, type: 3}
 --- !u!114 &5258441513611831466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4459,6 +4459,7 @@ MonoBehaviour:
   syncInterval: 0
   maxHealth:
     baseValue: 100
+  currentHealth: 0
   damage:
     baseValue: 15
   armor:

@@ -6,14 +6,14 @@ using System.Collections.Generic;
 public class CharacterHealth : NetworkBehaviour
 {
 
-    public Stat maxHealth;          // Maximum amount of health
-    public int currentHealth { get; protected set; }    // Current amount of health
+    public Stat maxHealth;
+    public int currentHealth;
 
     public Stat damage;
     public Stat armor;
 
     int i=0;
-    public event System.Action OnHealthReachedZero;
+  
     [SerializeField] List<GameObject> playerSpawnPoint = new List<GameObject>();
 
     bool lightAnim;
@@ -70,10 +70,13 @@ public class CharacterHealth : NetworkBehaviour
 
         if (other.gameObject.transform.CompareTag("FinishPoint"))
         {
+            //gameObject.GetComponent<AnimationStateController>().enabled = false;
 
+            /*
+                oyun sonu timeline
+
+            */
         }
-
-
     }
     [Command]
     private void CmdRespawnPlayer()
@@ -87,28 +90,19 @@ public class CharacterHealth : NetworkBehaviour
         gameObject.transform.position = playerSpawnPoint[i].transform.position;
     }
 
-    // Damage the character
     public void TakeDamage(int damage)
     {
-        // Subtract the armor value - Make sure damage doesn't go below 0.
-        damage -= armor.GetValue();
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);
-
-        // Subtract damage from health
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
-        // If we hit 0. Die.
         if (currentHealth <= 0)
         {
-            if (OnHealthReachedZero != null)
-            {
-                OnHealthReachedZero();
-            }
+            CmdRespawnPlayer();
+            currentHealth = maxHealth.GetValue();
         }
     }
 
-    // Heal the character.
+  
     public void Heal(int amount)
     {
         currentHealth += amount;

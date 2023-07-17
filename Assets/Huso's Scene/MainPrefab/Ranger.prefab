@@ -757,11 +757,12 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   maxHealth:
-    baseValue: 0
+    baseValue: 100
+  currentHealth: 100
   damage:
-    baseValue: 0
+    baseValue: 15
   armor:
-    baseValue: 0
+    baseValue: 15
   playerSpawnPoint: []
 --- !u!82 &-406702062040929308
 AudioSource:

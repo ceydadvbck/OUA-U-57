@@ -7,20 +7,26 @@ using System.Collections;
 public class EnemyController : NetworkBehaviour
 {   
     [SyncVar]
-    public float lookRadius = 10f;  // Detection range for player
+    public float lookRadius = 10f; 
     Animator animator;
-    UnityEngine.AI.NavMeshAgent agent; // Reference to the NavMeshAgent
+    UnityEngine.AI.NavMeshAgent agent;
+
+    AudioSource audioSource;
+    [SerializeField] AudioClip acSkeleton;
+    bool skeletonSoulSound;
 
     GameObject closestTarget = null;
     [HideInInspector] public GameObject[] target;
 
+    public int damage;
+    float distanceToClosest;
     bool chase;
 
     void Start()
     {
         chase = true;
         animator = GetComponent<Animator>();
-        
+        audioSource = GetComponent<AudioSource>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
         target = GameObject.FindGameObjectsWithTag("Player");
@@ -43,13 +49,20 @@ public class EnemyController : NetworkBehaviour
                         closestTarget = currentTarget;
 
                         animator.SetTrigger("GettingUp");
+
+                        if (!skeletonSoulSound)
+                        {
+                            audioSource.PlayOneShot(acSkeleton);
+                            skeletonSoulSound = true;
+                        }
+
                     }
                 }
             }
 
             if (closestTarget != null)
             {
-                float distanceToClosest = Vector3.Distance(closestTarget.transform.position, transform.position);
+                distanceToClosest = Vector3.Distance(closestTarget.transform.position, transform.position);
 
                 if (distanceToClosest <= lookRadius)
                 {
@@ -84,6 +97,14 @@ public class EnemyController : NetworkBehaviour
        
         agent.enabled = true;
         chase = false;
+    }
+
+    void Damage() //AnimationEvent
+    {
+        if (distanceToClosest <= agent.stoppingDistance)
+        {
+            closestTarget.transform.gameObject.GetComponent<CharacterHealth>().TakeDamage(damage);
+        }
     }
 
 

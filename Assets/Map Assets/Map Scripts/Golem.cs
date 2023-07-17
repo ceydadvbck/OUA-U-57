@@ -11,29 +11,25 @@ public class Golem : NetworkBehaviour
     private Animator anim;
 
     [HideInInspector] public GameObject[] target;
-    private Vector3 startPosition;
-    private Vector3 distance;
     public float CanSee;
 
     GameObject closestTarget = null;
     [SyncVar]
     public float lookRadius = 10f;
+    float distanceToClosest;
+
+    public int damage = 50;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        startPosition = transform.position;
 
         target = GameObject.FindGameObjectsWithTag("Player");
     }
 
     private void Update()
     {
-        //MoveToTarget();
-        //CheckDistanceToTarget();
-
-
-
+    
         if (target != null && target.Length > 0)
         {
             foreach (var currentTarget in target)
@@ -51,7 +47,7 @@ public class Golem : NetworkBehaviour
 
             if (closestTarget != null)
             {
-                float distanceToClosest = Vector3.Distance(closestTarget.transform.position, transform.position);
+                 distanceToClosest = Vector3.Distance(closestTarget.transform.position, transform.position);
 
                 if (distanceToClosest <= lookRadius)
                 {
@@ -78,52 +74,6 @@ public class Golem : NetworkBehaviour
             }
         }
     }
-
-    //private void MoveToTarget()
-    //{
-    //    agent.SetDestination(closestTarget.transform.position);
-    //    if (agent.velocity.magnitude > 0)
-    //    {
-    //        anim.SetBool("Walk", true);
-    //    }
-    //    else
-    //    {
-    //        anim.SetBool("Walk", false);
-    //    }
-    //}
-    //
-    //private void CheckDistanceToTarget()
-    //{
-    //    distance = agent.transform.position - target.transform.position;
-    //    if (distance.magnitude > CanSee)
-    //    {
-    //        agent.stoppingDistance = 0;
-    //        agent.SetDestination(startPosition);
-    //        if (agent.remainingDistance <= agent.stoppingDistance)
-    //        {
-    //            Quaternion targetRotation = Quaternion.Euler(0, 90, 0);
-    //            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
-    //        }
-    //
-    //    }
-    //    else
-    //    {
-    //        agent.stoppingDistance = 3;
-    //    }
-    //
-    //}
-
-    //private void PlayAttackAnimation()
-    //{
-    //    if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && distance.magnitude <= CanSee)
-    //    {
-    //        anim.SetBool("IsAttacking", true);
-    //    }
-    //    else
-    //    {
-    //        anim.SetBool("IsAttacking", false);
-    //    }
-   
     void FixedUpdate()
     {
         if (isServer)
@@ -131,6 +81,18 @@ public class Golem : NetworkBehaviour
             SyncEnemyPositionAndRotation();
         }
     }
+
+    void Damage() //AnimationEvent
+    {
+        if (distanceToClosest <= agent.stoppingDistance)
+        {
+            closestTarget.transform.gameObject.GetComponent<CharacterHealth>().TakeDamage(damage);
+        }
+    }
+       
+
+
+
 
     [Command]
     void SyncEnemyPositionAndRotation()

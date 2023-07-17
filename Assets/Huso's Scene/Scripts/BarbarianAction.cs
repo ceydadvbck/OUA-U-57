@@ -113,7 +113,7 @@ public class BarbarianAction : NetworkBehaviour
             {
 
                 anim.SetBool("AxeGroundAttack", true);
-                audioSource.PlayOneShot(acAxeGround);
+               
                 StartCooldown(groundCoolDownFill, groundAttackCoolDown);
                 axeGroundAttack = true;
                 bodyAim.weight = 0f;
@@ -344,7 +344,7 @@ public class BarbarianAction : NetworkBehaviour
     void RPCBarbarianGroundAttack()
     {
         GameObject cloneGroundAttackParticle = Instantiate(groundAttackParticle, groundAttackPoint.position, gameObject.transform.rotation);
-       
+        audioSource.PlayOneShot(acAxeGround);
         Destroy(cloneGroundAttackParticle, 3.5f);
 
         StartCoroutine(GroundAttackTimeControl(0.25f));
@@ -353,8 +353,6 @@ public class BarbarianAction : NetworkBehaviour
 
     IEnumerator GroundAttackTimeControl(float time)
     {
-      
-        
         yield return new WaitForSeconds(time);
 
         anim.SetBool("AxeGroundAttack", false);

@@ -32,10 +32,20 @@ public class BossController : NetworkBehaviour
     [SerializeField] float slashMagicTime;
     GameObject slashMagicClone;
 
+    [Space(10)]
+
+    [Header("Audio")]
+    [SerializeField] AudioClip acRedMagic;
+    [SerializeField] AudioClip acWhiteMagic;
+    [SerializeField] AudioClip acSlashMagic;
+    [SerializeField] AudioClip acSpawnSkeleton;
+    AudioSource audioSource;
+
 
     public void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         InvokeFunctionControl();
     }
 
@@ -64,6 +74,7 @@ public class BossController : NetworkBehaviour
             Vector3 spawnPoint = spawnSkeleton[i].transform.position;
 
             Instantiate(skeleton, spawnPoint, Quaternion.identity);
+            audioSource.PlayOneShot(acSpawnSkeleton);
         }
     }
 
@@ -90,6 +101,8 @@ public class BossController : NetworkBehaviour
         redMagicClone.transform.position = new Vector3(redMagicClone.transform.position.x, 19.25f, redMagicClone.transform.position.z);
         Destroy(redMagicClone, 5f);
 
+        audioSource.PlayOneShot(acRedMagic);
+
     }
 
     void RedMagicAnimationEvent()
@@ -114,6 +127,9 @@ public class BossController : NetworkBehaviour
         NetworkServer.Spawn(whiteMagicClone);
         whiteMagicClone.transform.position = new Vector3(whiteMagicClone.transform.position.x, 19.25f, whiteMagicClone.transform.position.z);
         Destroy(whiteMagicClone, 5f);
+
+        audioSource.PlayOneShot(acWhiteMagic);
+
     }
     void WhiteMagicAnimationEvent()
     {
@@ -126,6 +142,8 @@ public class BossController : NetworkBehaviour
         NetworkServer.Spawn(slashMagicClone);
         slashMagicClone.transform.rotation = Quaternion.Euler(0, Random.Range(-45, -135), 0);
         Destroy(slashMagicClone, 2f);
+
+        audioSource.PlayOneShot(acSlashMagic);
     }
 
     void SlashMagicAnimationEvent()
