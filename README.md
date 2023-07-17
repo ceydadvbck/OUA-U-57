@@ -148,6 +148,7 @@ https://github.com/ceydadvbck/OUA-U-57/assets/109868640/79b793a6-a2b6-4ea0-aca3-
 - **Sprint Review:** Aktarılan görevler ve bu sprint görevleri tamamlanmıştır. 
 - **Sprint Retrospective:**
   * Toplantıların son hafta hergün yapılması gerektiğine değinilmiştir.
+  * Takıma emekleri için teşekkür edilmiştir.
 - **Product Backlog URL** : https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit#gid=479934176
 ---
 - # Kullanılan Assetler
