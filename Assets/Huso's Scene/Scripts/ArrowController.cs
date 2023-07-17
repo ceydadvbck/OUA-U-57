@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ArrowController : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class ArrowController : MonoBehaviour
 
                 if (hit.gameObject.CompareTag("Skeleton"))
                 {
+                    hit.gameObject.transform.GetComponent<NavMeshAgent>().speed = 1f;
+
                     SkeletonBody skeletonBody = hit.gameObject.GetComponent<SkeletonBody>();
                     if (skeletonBody != null)
                     {

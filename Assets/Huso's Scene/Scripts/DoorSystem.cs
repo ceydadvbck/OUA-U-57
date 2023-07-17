@@ -8,6 +8,7 @@ public class DoorSystem : MonoBehaviour
     public float targetAngle = 70f; // Hedef açý, ihtiyaca göre ayarlanabilir
 
     bool doorOpened;
+    [SerializeField] GameObject statueDoor;
 
     public void Start()
     {
@@ -19,6 +20,8 @@ public class DoorSystem : MonoBehaviour
             StartCoroutine(RotateDoor());
             doorOpened = true;
 
+            if (statueDoor!=null)
+            statueDoor.AddComponent<DoorSystem>();
         }
     }
     private IEnumerator RotateDoor()

@@ -16,6 +16,8 @@ public class CharacterHealth : NetworkBehaviour
     public event System.Action OnHealthReachedZero;
     [SerializeField] List<GameObject> playerSpawnPoint = new List<GameObject>();
 
+    bool lightAnim;
+
     void Start()
     {
       
@@ -60,6 +62,18 @@ public class CharacterHealth : NetworkBehaviour
         {
             i = 3;
         }
+        if (other.gameObject.transform.CompareTag("LightAnim") && !lightAnim)
+        {
+            other.gameObject.GetComponent<Animator>().Play("LightAnim");
+            lightAnim = true;
+        }
+
+        if (other.gameObject.transform.CompareTag("FinishPoint"))
+        {
+
+        }
+
+
     }
     [Command]
     private void CmdRespawnPlayer()
