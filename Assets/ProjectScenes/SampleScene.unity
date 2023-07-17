@@ -5157,11 +5157,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1263407554245757032, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
   m_PrefabInstance: {fileID: 332467612}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &334650316 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1369323790898067339, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
-  m_PrefabInstance: {fileID: 1622708915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &349367677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6924,7 +6919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4211841280575034444, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
       propertyPath: m_Name
-      value: Chest (3)
+      value: Chest - Koridor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
@@ -9012,6 +9007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
+--- !u!136 &662570501 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 1204196534, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
+  m_PrefabInstance: {fileID: 1622708915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &674346407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1263407554245757032, guid: c61f31e10dd2da24e806428a8ccd0ab8, type: 3}
@@ -9948,7 +9948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4211841280575034444, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
       propertyPath: m_Name
-      value: Chest (1)
+      value: "Chest - Tuzak Odas\u0131"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
@@ -19152,11 +19152,6 @@ Transform:
   m_Father: {fileID: 911399357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1204196534 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 1204196534, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
-  m_PrefabInstance: {fileID: 1622708915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204599432
 GameObject:
   m_ObjectHideFlags: 0
@@ -19876,7 +19871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4211841280575034444, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
       propertyPath: m_Name
-      value: Chest (2)
+      value: "Chest - K\xFCt\xFCphane"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
@@ -23332,7 +23327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4211841280575034444, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
       propertyPath: m_Name
-      value: Chest
+      value: "Chest - Tabut Odas\u0131 2 "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9d30b40343b13429ec968d99e8daf0, type: 3}
@@ -23473,7 +23468,7 @@ PrefabInstance:
     - target: {fileID: 5866666021627376762, guid: 771c4dabe441a764d84cab6e32d64d64, type: 3}
       propertyPath: skillAreaCol
       value: 
-      objectReference: {fileID: 1204196534}
+      objectReference: {fileID: 662570501}
     - target: {fileID: 5866666021627376762, guid: 771c4dabe441a764d84cab6e32d64d64, type: 3}
       propertyPath: slashMagicTime
       value: 2
@@ -26181,6 +26176,10 @@ PrefabInstance:
     - target: {fileID: 2977555200116306911, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
       propertyPath: m_Center.z
       value: -1.1694324
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367811410471564318, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
+      propertyPath: m_Name
+      value: Chest - Sunak3
       objectReference: {fileID: 0}
     - target: {fileID: 9081096025276286118, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
       propertyPath: m_RootOrder
@@ -37113,6 +37112,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8662668894594177979, guid: f87db4a9d84382444ba0221bd2f39335, type: 3}
   m_PrefabInstance: {fileID: 8378262400860424042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1369323792496649528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1369323790898067339, guid: b2971a83b57fc264c9da9d76284eb029, type: 3}
+  m_PrefabInstance: {fileID: 1622708915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1585899318275494148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37186,7 +37190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472aa4804d6e8014facb311d38d85041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  libraryDoor: {fileID: 334650316}
+  libraryDoor: {fileID: 1369323792496649528}
 --- !u!1001 &8378262400860424042
 PrefabInstance:
   m_ObjectHideFlags: 0
