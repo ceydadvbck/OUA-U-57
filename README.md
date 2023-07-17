@@ -17,7 +17,9 @@ TAKIM OUA-U-57
 ---
 
 ### ÜRÜN İSMİ
+
 Zenith's Curse
+
 ---
 
 ### ÜRÜN AÇIKLAMASI
