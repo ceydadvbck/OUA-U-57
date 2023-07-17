@@ -17,12 +17,12 @@ TAKIM OUA-U-57
 ---
 
 ### ÜRÜN İSMİ
-
+Zenith's Curse
 ---
 
 ### ÜRÜN AÇIKLAMASI
 
-- "..." adlı bu heyecan verici oyunda, oyuncular çeşitli zorlukları aşarak dungeon'dan kaçmaya çalışmaktadırlar. Dungeonda 14 farklı oda bulunmaktadır ve her odada farklı bir bulmaca veya engel seti oyuncuları beklemektedir. Her odada bulunan engeller aşılarak oyunun hikayesi oyuncu tarafından keşfedilir. Tek bir dönem üzerine tasarlanmış bu oyunda oyuncular hikayeler, puzzlelar ve aksiyon dolu görevleri tamamlayarak eğlenceli ve heyecanlı zaman geçirecekler.
+- "Zenith's Curse" adlı bu heyecan verici oyunda, oyuncular çeşitli zorlukları aşarak dungeon'dan kaçmaya çalışmaktadırlar. Dungeonda 14 farklı oda bulunmaktadır ve her odada farklı bir bulmaca veya engel seti oyuncuları beklemektedir. Her odada bulunan engeller aşılarak oyunun hikayesi oyuncu tarafından keşfedilir. Tek bir dönem üzerine tasarlanmış bu oyunda oyuncular hikayeler, puzzlelar ve aksiyon dolu görevleri tamamlayarak eğlenceli ve heyecanlı zaman geçirecekler.
 
 ---
 
