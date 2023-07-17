@@ -62,17 +62,14 @@ public class RangerAction : NetworkBehaviour
     [SerializeField] private bool classicArrowShoot;
     [SerializeField] private bool tripleArrowShoot;
 
-    AudioSource audioSource;
-    [SerializeField] AudioClip acArrow;
-    [SerializeField] AudioClip acBow;
 
-
+   
 
     public void Start()
     {
         aimLookAt = GameObject.FindGameObjectWithTag("AimLookAt");
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+
         mainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
         initialOffset = bodyAim.data.offset;
@@ -92,7 +89,6 @@ public class RangerAction : NetworkBehaviour
         {
             if (!rangerAiming)
             {
-                audioSource.PlayOneShot(acBow);
                 RangerAim(bodyAim.weight);
             }
         }
@@ -112,7 +108,6 @@ public class RangerAction : NetworkBehaviour
                 if (Time.time > classicAttackTime)
                 {
                     animator.SetBool("ArrowAimShoot", true);
-                    audioSource.PlayOneShot(acArrow);
                     StartCooldown(classicArrowCoolDownFill, classicAttackCoolDown);
 
                     tripleArrowShoot = false;
@@ -128,7 +123,6 @@ public class RangerAction : NetworkBehaviour
                 if (Time.time > iceAttackTime)
                 {
                     animator.SetBool("ArrowAimShoot", true);
-                    audioSource.PlayOneShot(acArrow);
                     StartCooldown(iceArrowCoolDownFill,  iceAttackCoolDown);
 
                     tripleArrowShoot = false;
@@ -144,7 +138,6 @@ public class RangerAction : NetworkBehaviour
                 if (Time.time > tripleAttackTime)
                 {
                     animator.SetBool("ArrowAimShoot", true);
-                    audioSource.PlayOneShot(acArrow);
                     StartCooldown(trippleArrowCoolDownFill, tripleAttackCoolDown);
 
                     tripleArrowShoot = true;

@@ -31,10 +31,6 @@ public class CharacterMovement : NetworkBehaviour
 
     [SerializeField] private Transform mainCamera;
 
-    AudioSource audioSource;
-    [SerializeField] AudioClip acStep;
-    [SerializeField] AudioClip acJump;
-
 
 
     [SyncVar(hook = nameof(OnTransformChange))]
@@ -56,7 +52,6 @@ public class CharacterMovement : NetworkBehaviour
         characterController = GetComponent<CharacterController>();
         animationState = GetComponent<AnimationStateController>();
         anim = GetComponent<NetworkAnimator>();
-        audioSource = GetComponent<AudioSource>();
 
 
         if (isOwned)
@@ -117,11 +112,6 @@ public class CharacterMovement : NetworkBehaviour
 
         transform.position += movement;
 
-        if (movement.magnitude > 0 && !audioSource.isPlaying)
-        {
-            audioSource.PlayOneShot(acStep);
-        }
-
         #endregion
 
         #region Rotate
@@ -172,8 +162,6 @@ public class CharacterMovement : NetworkBehaviour
                 jumpPressed = true;
 
                 anim.SetTrigger("Jump");
-
-                audioSource.PlayOneShot(acJump);
                 velocity.y = jumpSpeed;
                 characterController.Move(velocity * Time.deltaTime);
             }

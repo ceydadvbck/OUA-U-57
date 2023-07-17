@@ -14,13 +14,11 @@ public class CharacterSelect : NetworkBehaviour
     private bool[] characterSelected;
 
     GameObject[] skeletonObjects;
-    GameObject[] golemObjects;
     List<EnemyController> enemyControllers = new List<EnemyController>();
-    List<Golem> golems = new List<Golem>();
 
     public void Start()
     {
-        golemObjects = GameObject.FindGameObjectsWithTag("Golem");
+
         skeletonObjects = GameObject.FindGameObjectsWithTag("Skeleton");
 
         foreach (GameObject skeletonObject in skeletonObjects)
@@ -29,14 +27,6 @@ public class CharacterSelect : NetworkBehaviour
             if (enemyController != null)
             {
                 enemyControllers.Add(enemyController);
-            }
-        }
-        foreach (GameObject golemObject in golemObjects)
-        {
-            Golem golem = golemObject.GetComponent<Golem>();
-            if (golem != null)
-            {
-                golems.Add(golem);
             }
         }
     }
@@ -90,21 +80,6 @@ public class CharacterSelect : NetworkBehaviour
                 updatedTargets[enemyController.target.Length] = characterInstance;
 
                 enemyController.target = updatedTargets;
-            }
-        }
-        foreach (GameObject golemObject in golemObjects)
-        {
-            Golem golem = golemObject.GetComponent<Golem>();
-            if (golem != null)
-            {
-                GameObject[] updatedTargets2 = new GameObject[golem.target.Length + 1];
-                for (int i = 0; i < golem.target.Length; i++)
-                {
-                    updatedTargets2[i] = golem.target[i];
-                }
-                updatedTargets2[golem.target.Length] = characterInstance;
-
-                golem.target = updatedTargets2;
             }
         }
     }

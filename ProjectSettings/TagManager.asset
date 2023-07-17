@@ -30,9 +30,6 @@ TagManager:
   - spawn3
   - spawn4
   - Statue
-  - Golem
-  - FinishPoint
-  - LightAnim
   layers:
   - Default
   - TransparentFX
