@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ChestController : MonoBehaviour
+public class ChestSystem : MonoBehaviour
 {
     public Transform lid; // Kapak nesnesi
     public float openAngle = 50f; // Açýlacak açý (90 derece gibi)
@@ -23,6 +23,7 @@ public class ChestController : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isChestOpen)
         {
+            Debug.Log("Girdi");
             OpenChest();
         }
     }
