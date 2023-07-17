@@ -200,24 +200,24 @@ AnimationClip:
       - serializedVersion: 3
         time: 16.116667
         value: {x: -18, y: 63, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: -3.636362, y: 0, z: 0}
+        outSlope: {x: -3.636362, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 16.833334
-        value: {x: -9.306761, y: 40, z: 0}
-        inSlope: {x: 18.399578, y: 0, z: 0}
-        outSlope: {x: 18.399578, y: 0, z: 0}
+        value: {x: -19.64738, y: 40, z: 0}
+        inSlope: {x: -1.1780375, y: -62.72725, z: 0}
+        outSlope: {x: -1.1780375, y: -62.72725, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 17.583334
-        value: {x: 0, y: 70, z: 0}
+        value: {x: -20, y: -32, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -895,15 +895,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 16.116667
         value: -18
-        inSlope: 0
-        outSlope: 0
+        inSlope: -3.636362
+        outSlope: -3.636362
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 17.583334
-        value: 0
+        value: -20
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1094,15 +1094,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 16.833334
         value: 40
-        inSlope: 0
-        outSlope: 0
+        inSlope: -62.72725
+        outSlope: -62.72725
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 17.583334
-        value: 70
+        value: -32
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1338,7 +1338,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -1838046108714123254}
-    m_Duration: 18.833333333333332
+    m_Duration: 18.183333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6315744196867763007}
     m_EaseInDuration: 0
