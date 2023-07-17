@@ -29,6 +29,7 @@ TagManager:
   - spawn2
   - spawn3
   - spawn4
+  - Statue
   layers:
   - Default
   - TransparentFX

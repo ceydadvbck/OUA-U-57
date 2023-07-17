@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BossController : MonoBehaviour
+using Mirror;
+public class BossController : NetworkBehaviour
 {
     Animator anim;
     [SerializeField] private GameObject skeleton;
@@ -15,7 +15,7 @@ public class BossController : MonoBehaviour
     [SerializeField] Transform[] spawnSkeleton;
     private System.Random rand = new System.Random();
     [HideInInspector] public double _weight;
-    
+
     [Space(10)]
 
     [Header("Skill")]
@@ -44,7 +44,7 @@ public class BossController : MonoBehaviour
     {
         if (slashMagicClone != null)
         {
-            slashMagicClone.transform.Translate(-Vector3.right * 15f * Time.deltaTime);
+            slashMagicClone.transform.Translate(Vector3.left * 15f * Time.deltaTime);
         }
     }
 
@@ -84,9 +84,10 @@ public class BossController : MonoBehaviour
         );
 
         Vector3 skillPosition = capsuleCenter + randomOffset;
-        
-        GameObject redMagicClone = Instantiate(RedMagicParticle, skillPosition, Quaternion.identity, skillAreaCol.transform);
-        redMagicClone.transform.position = new Vector3(redMagicClone.transform.position.x, 0f, redMagicClone.transform.position.z);
+
+        GameObject redMagicClone = Instantiate(RedMagicParticle, skillPosition, Quaternion.identity);
+        NetworkServer.Spawn(redMagicClone);
+        redMagicClone.transform.position = new Vector3(redMagicClone.transform.position.x, 19.25f, redMagicClone.transform.position.z);
         Destroy(redMagicClone, 5f);
 
     }
@@ -103,14 +104,15 @@ public class BossController : MonoBehaviour
 
         Vector3 randomOffset = new Vector3(
             Random.Range(-skillAreaCol.bounds.extents.x, skillAreaCol.bounds.extents.x),
-            Random.Range(-skillAreaCol.bounds.extents.y, skillAreaCol.bounds.extents.y),
+            Random.Range(19.25f, 19.25f),
             Random.Range(-skillAreaCol.bounds.extents.z, skillAreaCol.bounds.extents.z)
         );
 
         Vector3 skillPosition = capsuleCenter + randomOffset;
 
-        GameObject whiteMagicClone = Instantiate(WhiteMagicParticle, skillPosition, Quaternion.identity, skillAreaCol.transform);
-        whiteMagicClone.transform.position = new Vector3(whiteMagicClone.transform.position.x, 0f, whiteMagicClone.transform.position.z);
+        GameObject whiteMagicClone = Instantiate(WhiteMagicParticle, skillPosition, Quaternion.identity);
+        NetworkServer.Spawn(whiteMagicClone);
+        whiteMagicClone.transform.position = new Vector3(whiteMagicClone.transform.position.x, 19.25f, whiteMagicClone.transform.position.z);
         Destroy(whiteMagicClone, 5f);
     }
     void WhiteMagicAnimationEvent()
@@ -118,12 +120,11 @@ public class BossController : MonoBehaviour
         anim.SetTrigger("WhiteMagic");
     }
 
-
-
     void SlashMagic() //AnimationEvent
     {
         slashMagicClone = Instantiate(SlashMagicParticle, new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z), transform.rotation, skillAreaCol.transform);
-        slashMagicClone.transform.rotation = Quaternion.Euler(0, Random.Range(45, 135), 0);
+        NetworkServer.Spawn(slashMagicClone);
+        slashMagicClone.transform.rotation = Quaternion.Euler(0, Random.Range(-45, -135), 0);
         Destroy(slashMagicClone, 2f);
     }
 
@@ -131,6 +132,7 @@ public class BossController : MonoBehaviour
     {
         anim.SetTrigger("SlashMagic");
     }
+
 }
 
 

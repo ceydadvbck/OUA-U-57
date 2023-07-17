@@ -5,23 +5,26 @@ using UnityEngine;
 public class DoorSystem : MonoBehaviour
 {
     public float rotationSpeed = 10f; // Dönüþ hýzý, ihtiyaca göre ayarlanabilir
-    public float targetAngle = -70f; // Hedef açý, ihtiyaca göre ayarlanabilir
-    private float currentAngle = 0f;
+    public float targetAngle = 70f; // Hedef açý, ihtiyaca göre ayarlanabilir
+
+    bool doorOpened;
 
     public void Start()
     {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") &&!doorOpened)
         {
             StartCoroutine(RotateDoor());
+            doorOpened = true;
+
         }
     }
     private IEnumerator RotateDoor()
     {
         Quaternion startRotation = transform.rotation;
-        Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y - 70, transform.rotation.eulerAngles.z);
+        Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y - targetAngle, transform.rotation.eulerAngles.z);
         float t = 0f;
 
         while (t < 1f)

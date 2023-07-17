@@ -6,8 +6,12 @@ using UnityEngine;
 public class CheckColliderBossArena : MonoBehaviour
 {
     List<GameObject> players = new List<GameObject>();
-    int i; //Sayac deðiþkeni için.
-    bool bossIsActive = false; //Bütün oyuncular collider içine girerse true olacak ve boss harekete geçecek.
+    int i;
+    bool bossIsActive = false;
+
+    [SerializeField] GameObject boss;
+    [SerializeField] GameObject arenaPlayerCheck;
+
     private void Start()
     {
         //Oyuncularýn sayýsýný alabilmek için listeye ekledim
@@ -15,19 +19,19 @@ public class CheckColliderBossArena : MonoBehaviour
     }
     private void Update()
     {
-        if (i == players.Count) //Collider içindeki oyuncu sayýsý ile eleman sayýlarý eþit ise
+        if (i == 2) //Collider içindeki oyuncu sayýsý ile eleman sayýlarý eþit ise
         {
             bossIsActive = true;
         }
-        if (bossIsActive)
+        if (bossIsActive && i >0)
         {
-            //Boss Harekete geçmesi için gerekli methot yazýlacak.
-            //Kapý kapanacak.
+            arenaPlayerCheck.SetActive(true);
+            boss.GetComponent<Animator>().SetTrigger("BossStandUp");
         }
-        Debug.Log(i);
+        
     }
     //Hem giriþi hem çýkýþý kontrol ettim aynýu anda ikiside içinde oldugunda boss harekete geçecek ve kapý kapanacak
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
             i++;
