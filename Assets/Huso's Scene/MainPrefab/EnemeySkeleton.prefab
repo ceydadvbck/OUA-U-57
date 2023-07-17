@@ -571,7 +571,8 @@ MonoBehaviour:
   childLimbs: []
   limbPrefab: {fileID: 1393892154479712931, guid: f9e104e0f2d9bc1458f5813f118d41ca, type: 3}
   skeletonFireParticle: {fileID: 1000010823978654, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
-  acBone: {fileID: 8300000, guid: 5277954e68d25c747bf7fb76a23fa5bf, type: 3}
+  acBone: {fileID: 8300000, guid: c60abccd742bb314f94d0d5049ef1ffc, type: 3}
+  acFreeze: {fileID: 8300000, guid: 2a4f8cf51ad4cd344a70583906ad3a3d, type: 3}
 --- !u!195 &5866666019891217176
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -627,6 +628,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   lookRadius: 10
+  acSkeleton: {fileID: 8300000, guid: 4e301e8614ed5e740acef0d032650412, type: 3}
   target:
   - {fileID: 0}
   damage: 15

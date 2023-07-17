@@ -570,8 +570,8 @@ MonoBehaviour:
   jumpRate: 1.5
   gravityScale: -9.8
   mainCamera: {fileID: 0}
-  acStep: {fileID: 8300000, guid: 9419b5c26c22f334ea8efacf0730cf37, type: 3}
-  acJump: {fileID: 8300000, guid: b4255ea4ff1e0c446ab526c4cf965d8b, type: 3}
+  acStep: {fileID: 8300000, guid: 5769a15804920d744be7cd1d2f52e179, type: 3}
+  acJump: {fileID: 8300000, guid: ce5ab3901b047ff47b44ed4a7cb5894d, type: 3}
   lerpRate: 15
 --- !u!114 &7513204363500589690
 MonoBehaviour:
@@ -638,8 +638,8 @@ MonoBehaviour:
   trippleArrowCoolDownFill: {fileID: 5961487378748648158}
   classicArrowShoot: 0
   tripleArrowShoot: 0
-  acArrow: {fileID: 8300000, guid: 0ffdf9d9ff23ea040af391ec50eb2343, type: 3}
-  acBow: {fileID: 8300000, guid: aec725768be2d7d46824ad98646d46b5, type: 3}
+  acBow: {fileID: 8300000, guid: 1f3fb4664fb94be45a190faad6699249, type: 3}
+  acArrow: {fileID: 8300000, guid: 996ade91137c022438bb40df6c08219b, type: 3}
 --- !u!114 &2984557620249713840
 MonoBehaviour:
   m_ObjectHideFlags: 0
