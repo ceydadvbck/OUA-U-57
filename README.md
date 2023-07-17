@@ -149,3 +149,5 @@ https://github.com/ceydadvbck/OUA-U-57/assets/109868640/79b793a6-a2b6-4ea0-aca3-
 - **Product Backlog URL** : https://docs.google.com/spreadsheets/d/1e3cSABEOPA0IgkMFb_tnwBHIKN4xbsS0iGgxnUyFWAY/edit#gid=479934176
 ---
 - # Kullanılan Assetler
+https://docs.google.com/document/d/1cdTUzpCcjL0E-9ScAmVyMkyyg6XzDmV30ET-ANroBQk/edit
+
