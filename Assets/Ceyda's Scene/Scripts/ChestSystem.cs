@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ChestController : MonoBehaviour
+public class ChestSystem : MonoBehaviour
 {
     public Transform lid; // Kapak nesnesi
     public float openAngle = 50f; // Açýlacak açý (90 derece gibi)
@@ -46,7 +46,7 @@ public class ChestController : MonoBehaviour
     private void OpenChest()
     {
         // Kapaklarý yavaþça açmak için döndürecek Quaternion rotasyonunu oluþturun
-        Quaternion targetRotation = Quaternion.Euler(0f, openAngle, 0f) * initialRotation;
+        Quaternion targetRotation = Quaternion.Euler(-openAngle,0 , 0f) * initialRotation;
 
         // Quaternion rotasyonunu kullanarak kapaklarý yavaþça açýn
         StartCoroutine(RotateLid(targetRotation));
