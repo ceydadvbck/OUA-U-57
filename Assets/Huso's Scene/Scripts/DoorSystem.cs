@@ -4,21 +4,35 @@ using UnityEngine;
 
 public class DoorSystem : MonoBehaviour
 {
-    public float rotationSpeed = 10f; // Dönüþ hýzý, ihtiyaca göre ayarlanabilir
-    public float targetAngle = 70f; // Hedef açý, ihtiyaca göre ayarlanabilir
+    public float rotationSpeed = 2f; // Dönüþ hýzý, ihtiyaca göre ayarlanabilir
+    public float targetAngle = -70f; // Hedef açý, ihtiyaca göre ayarlanabilir
 
     bool doorOpened;
+    [SerializeField] GameObject Golems;
+    [SerializeField] GameObject statueDoor;
 
-    public void Start()
+    public void FixedUpdate()
     {
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") &&!doorOpened)
+       
+        if (Golems != null && Golems.transform.childCount == 0 && gameObject.transform.CompareTag("GolemDoor") && !doorOpened)
         {
             StartCoroutine(RotateDoor());
             doorOpened = true;
-
+            Debug.Log("xd");
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && !doorOpened && !gameObject.transform.CompareTag("GolemDoor") && !gameObject.transform.CompareTag("Statue"))
+        {
+            StartCoroutine(RotateDoor());
+            doorOpened = true;
+        }
+        if (other.gameObject.CompareTag("Player") && !doorOpened &&statueDoor != null && gameObject.transform.CompareTag("Statue"))
+        {
+            StartCoroutine(RotateDoor());
+            doorOpened = true;
+            statueDoor.AddComponent<DoorSystem>();
         }
     }
     private IEnumerator RotateDoor()
