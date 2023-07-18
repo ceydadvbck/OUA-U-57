@@ -64,7 +64,7 @@ public class CharacterHealth : NetworkBehaviour
         }
         if (other.gameObject.transform.CompareTag("LightAnim") && !lightAnim)
         {
-            other.gameObject.GetComponent<Animator>().Play("LightAnim");
+            other.gameObject.GetComponent<Animator>().Play("Light");
             lightAnim = true;
         }
 
