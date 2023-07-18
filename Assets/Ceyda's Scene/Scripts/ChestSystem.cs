@@ -23,6 +23,7 @@ public class ChestSystem : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isChestOpen)
         {
+            Debug.Log("Girdi");
             OpenChest();
         }
     }
