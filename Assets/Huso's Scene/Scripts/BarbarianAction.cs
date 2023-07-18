@@ -65,7 +65,12 @@ public class BarbarianAction : NetworkBehaviour
     bool axeHolded = true;
     bool classicAttack = false;
     public bool isCharacterActive;
-   
+
+
+    AudioSource audioSource;
+    [SerializeField] AudioClip acAxeAttack;
+    [SerializeField] AudioClip acAxeThrow;
+    [SerializeField] AudioClip acAxeGround;
 
     public void Awake()
     {
@@ -74,6 +79,7 @@ public class BarbarianAction : NetworkBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         aimLookAt = GameObject.FindGameObjectWithTag("AimLookAt");
         anim.SetBool("AxeHolded", true);
@@ -90,6 +96,7 @@ public class BarbarianAction : NetworkBehaviour
             if (Time.time > classicAttackTime)
             {
                 anim.SetBool("AxeClassicAttack", true);
+                audioSource.PlayOneShot(acAxeAttack);
                 StartCooldown(classicCoolDownFill, classicAttackCoolDown);
                 StartCoroutine(ClassicAttackControl());
                 classicAttack = true;
@@ -104,8 +111,9 @@ public class BarbarianAction : NetworkBehaviour
         {
             if (Time.time > groundAttackTime)
             {
-               
+
                 anim.SetBool("AxeGroundAttack", true);
+               
                 StartCooldown(groundCoolDownFill, groundAttackCoolDown);
                 axeGroundAttack = true;
                 bodyAim.weight = 0f;
@@ -137,6 +145,7 @@ public class BarbarianAction : NetworkBehaviour
                 if (Time.time > throwAttackTime)
                 {
                     StartCooldown(throwCoolDownFill, throwAttackCoolDown);
+                    audioSource.PlayOneShot(acAxeThrow);
                     anim.SetBool("AxeThrow", true);
                     anim.SetBool("AxeHolded", false);
 
@@ -224,6 +233,14 @@ public class BarbarianAction : NetworkBehaviour
             {
                 SkeletonBody skeleton = hit.gameObject.GetComponent<SkeletonBody>();
                 skeleton.GetHit();
+            }
+            if (hit.gameObject.transform.CompareTag("Boss"))
+            {
+                hit.gameObject.transform.GetComponent<EnemyHealth>().Damage(25f);
+            }
+            if (hit.gameObject.transform.CompareTag("Golem"))
+            {
+                hit.gameObject.transform.GetComponent<EnemyHealth>().Damage(50f);
             }
 
         }
@@ -327,9 +344,10 @@ public class BarbarianAction : NetworkBehaviour
     void RPCBarbarianGroundAttack()
     {
         GameObject cloneGroundAttackParticle = Instantiate(groundAttackParticle, groundAttackPoint.position, gameObject.transform.rotation);
+        audioSource.PlayOneShot(acAxeGround);
         Destroy(cloneGroundAttackParticle, 3.5f);
 
-        StartCoroutine(GroundAttackTimeControl(0.75f));
+        StartCoroutine(GroundAttackTimeControl(0.25f));
     }
 
 

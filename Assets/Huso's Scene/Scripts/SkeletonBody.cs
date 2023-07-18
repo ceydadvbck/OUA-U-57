@@ -8,12 +8,24 @@ public class SkeletonBody : MonoBehaviour
 
     [SerializeField] GameObject limbPrefab;
     [SerializeField] private GameObject skeletonFireParticle;
+
+    [SerializeField] AudioClip acBone;
+    [SerializeField] AudioClip acFreeze;
+
+    AudioSource audioSource;
+
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void GetHit()
     {
         if (limbPrefab != null)
         {
             GameObject limbClone = Instantiate(limbPrefab, transform.position, transform.rotation);
             Destroy(limbClone, 5f);
+            limbClone.GetComponent<AudioSource>().PlayOneShot(acBone);
         }
 
         transform.localScale = Vector3.zero;
@@ -28,7 +40,7 @@ public class SkeletonBody : MonoBehaviour
             GetHit();
 
         }
-        
+
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -41,5 +53,10 @@ public class SkeletonBody : MonoBehaviour
             Invoke("GetHit", 2f);
 
         }
+    }
+
+    public void FreezeSound()
+    {
+        audioSource.PlayOneShot(acFreeze);
     }
 }

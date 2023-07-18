@@ -29,6 +29,12 @@ TagManager:
   - spawn2
   - spawn3
   - spawn4
+  - Statue
+  - Golem
+  - FinishPoint
+  - LightAnim
+  - GolemDoor
+  - StatueDoor
   layers:
   - Default
   - TransparentFX
